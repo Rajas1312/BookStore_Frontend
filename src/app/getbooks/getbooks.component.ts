@@ -39,7 +39,13 @@ export class GetbooksComponent implements OnInit {
       this.submit()
     })
   }
-  openBox(data: any) {
+  openBox(data: any, book: any, author: any, price: any, description: any, quantity: any, discountPrice: any) {
+    this.update.bookName = book;
+    this.update.author = author;
+    this.update.price = price;
+    this.update.description = description;
+    this.update.quantity = quantity;
+    this.update.discountPrice = discountPrice;
     this.openModal = true;
     this.id = data
     localStorage.setItem('updateId', this.id)

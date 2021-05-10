@@ -3,9 +3,8 @@
         <div class="card-img" fxLayout="row" fxLayoutAlign="center">
             <img id="book" src="../../assets/Image 11.png">
         </div>
-        <div class="card-block tooltip tooltip-lg">
-            <span class="tooltip-content">I am the large tooltip and very wide for long content.</span>
-            <div class="book-title" (click)="openBox(array._id)">
+        <div class="card-block">
+            <div class="book-title">
                 {{array.bookName}}
             </div>
             <div class="sub-title">{{array.author}}</div>
@@ -14,7 +13,8 @@
                 <div style="font-size: 12px;">Rs({{array.discountPrice}})</div>
             </div>
             <div fxLayout="row" fxLayoutAlign="space-between">
-                <button class="btn btn-primary" (click)="openBox(array._id)">Update</button>
+                <button class="btn btn-primary"
+                    (click)="openBox(array._id,array.bookName,array.author,array.price,array.description,array.quantity,array.discountPrice)">Update</button>
                 <button class="btn btn-outline" (click)="openDeleteBox(array._id)">Delete</button>
             </div>
         </div>
@@ -27,37 +27,33 @@
         <form clrForm clrLayout="vertical">
             <clr-input-container>
                 <label>BookName</label>
-                <input clrInput type="text" name="text" [(ngModel)]="update.bookName" style="width:26vw" required />
+                <input clrInput type="text" name="text1" [(ngModel)]="update.bookName" style="width:26vw" required />
             </clr-input-container>
 
             <clr-input-container>
                 <label>Author</label>
-                <input clrInput type="text" name="password" type="text" [(ngModel)]="update.author" style="width:26vw"
-                    required />
+                <input clrInput type="text" name="text2" [(ngModel)]="update.author" style="width:26vw" required />
             </clr-input-container>
 
             <clr-input-container>
                 <label>Description</label>
-                <input clrInput type="text" name="password" type="text" [(ngModel)]="update.description"
-                    style="width:26vw" required />
+                <input clrInput type="text" name="text3" [(ngModel)]="update.description" style="width:26vw" required />
             </clr-input-container>
 
             <clr-input-container>
                 <label>Quantity</label>
-                <input clrInput type="text" name="password" type="text" [(ngModel)]="update.quantity" style="width:26vw"
-                    required />
+                <input clrInput type="text" name="text4" [(ngModel)]="update.quantity" style="width:26vw" required />
             </clr-input-container>
 
             <clr-input-container>
                 <label>Price</label>
-                <input clrInput type="text" name="password" type="text" [(ngModel)]="update.price" style="width:26vw"
-                    required />
+                <input clrInput type="text" name="text5" [(ngModel)]="update.price" style="width:26vw" required />
             </clr-input-container>
 
             <clr-input-container>
                 <label>Discount Price</label>
-                <input clrInput type="text" name="password" type="text" [(ngModel)]="update.discountPrice"
-                    style="width:26vw" required />
+                <input clrInput type="text" name="text6" [(ngModel)]="update.discountPrice" style="width:26vw"
+                    required />
             </clr-input-container>
 
         </form>

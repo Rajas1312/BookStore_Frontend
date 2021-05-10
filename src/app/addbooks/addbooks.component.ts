@@ -30,6 +30,12 @@ export class AddbooksComponent implements OnInit {
       console.log(res)
       this.service.sendMessage("addedBook")
       this.openModal = false
+      this.addBook.author = null;
+      this.addBook.bookName = null;
+      this.addBook.description = null;
+      this.addBook.discountPrice = null;
+      this.addBook.price = null;
+      this.addBook.quantity = null;
     }, error => {
       console.log(error)
       this.openModal = false

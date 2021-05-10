@@ -8,37 +8,34 @@
         <form clrForm clrLayout="vertical">
             <clr-input-container>
                 <label>BookName</label>
-                <input clrInput type="text" name="text" [(ngModel)]="addBook.bookName" style="width:26vw" required />
+                <input clrInput type="text" name="text1" [(ngModel)]="addBook.bookName" style="width:26vw" required />
             </clr-input-container>
 
             <clr-input-container>
                 <label>Author</label>
-                <input clrInput type="text" name="password" type="text" [(ngModel)]="addBook.author" style="width:26vw"
-                    required />
+                <input clrInput type="text" name="text2" [(ngModel)]="addBook.author" style="width:26vw" required />
             </clr-input-container>
 
             <clr-input-container>
                 <label>Description</label>
-                <input clrInput type="text" name="password" type="text" [(ngModel)]="addBook.description"
-                    style="width:26vw" required />
-            </clr-input-container>
-
-            <clr-input-container>
-                <label>Quantity</label>
-                <input clrInput type="text" name="password" type="text" [(ngModel)]="addBook.quantity"
-                    style="width:26vw" required />
-            </clr-input-container>
-
-            <clr-input-container>
-                <label>Price</label>
-                <input clrInput type="text" name="password" type="text" [(ngModel)]="addBook.price" style="width:26vw"
+                <input clrInput type="text" name="text3" [(ngModel)]="addBook.description" style="width:26vw"
                     required />
             </clr-input-container>
 
             <clr-input-container>
+                <label>Quantity</label>
+                <input clrInput type="text" name="text4" [(ngModel)]="addBook.quantity" style="width:26vw" required />
+            </clr-input-container>
+
+            <clr-input-container>
+                <label>Price</label>
+                <input clrInput type="text" name="text5" [(ngModel)]="addBook.price" style="width:26vw" required />
+            </clr-input-container>
+
+            <clr-input-container>
                 <label>Discount Price</label>
-                <input clrInput type="text" name="password" type="text" [(ngModel)]="addBook.discountPrice"
-                    style="width:26vw" required />
+                <input clrInput type="text" name="text6" [(ngModel)]="addBook.discountPrice" style="width:26vw"
+                    required />
             </clr-input-container>
 
         </form>
