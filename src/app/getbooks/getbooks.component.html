@@ -1,0 +1,80 @@
+<div class="main" fxLayout="row wrap">
+    <div class="card " *ngFor="let array of arr">
+        <div class="card-img" fxLayout="row" fxLayoutAlign="center">
+            <img id="book" src="../../assets/Image 11.png">
+        </div>
+        <div class="card-block tooltip tooltip-lg">
+            <span class="tooltip-content">I am the large tooltip and very wide for long content.</span>
+            <div class="book-title" (click)="openBox(array._id)">
+                {{array.bookName}}
+            </div>
+            <div class="sub-title">{{array.author}}</div>
+            <div fxLayout="row" fxLayoutGap="5px">
+                <div class="price">Rs. {{array.price}}</div>
+                <div style="font-size: 12px;">Rs({{array.discountPrice}})</div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <button class="btn btn-primary" (click)="openBox(array._id)">Update</button>
+                <button class="btn btn-outline" (click)="openDeleteBox(array._id)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<clr-modal [(clrModalOpen)]="openModal">
+    <h3 class="modal-title">Update Book</h3>
+    <div class="modal-body">
+        <form clrForm clrLayout="vertical">
+            <clr-input-container>
+                <label>BookName</label>
+                <input clrInput type="text" name="text" [(ngModel)]="update.bookName" style="width:26vw" required />
+            </clr-input-container>
+
+            <clr-input-container>
+                <label>Author</label>
+                <input clrInput type="text" name="password" type="text" [(ngModel)]="update.author" style="width:26vw"
+                    required />
+            </clr-input-container>
+
+            <clr-input-container>
+                <label>Description</label>
+                <input clrInput type="text" name="password" type="text" [(ngModel)]="update.description"
+                    style="width:26vw" required />
+            </clr-input-container>
+
+            <clr-input-container>
+                <label>Quantity</label>
+                <input clrInput type="text" name="password" type="text" [(ngModel)]="update.quantity" style="width:26vw"
+                    required />
+            </clr-input-container>
+
+            <clr-input-container>
+                <label>Price</label>
+                <input clrInput type="text" name="password" type="text" [(ngModel)]="update.price" style="width:26vw"
+                    required />
+            </clr-input-container>
+
+            <clr-input-container>
+                <label>Discount Price</label>
+                <input clrInput type="text" name="password" type="text" [(ngModel)]="update.discountPrice"
+                    style="width:26vw" required />
+            </clr-input-container>
+
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="openModal = false">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="closeBox()">Ok</button>
+    </div>
+</clr-modal>
+
+<clr-modal [(clrModalOpen)]="openDeleteModal">
+    <h3 class="modal-title">Are You Sure You Want To Delete</h3>
+    <div class="modal-body">
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="openDeleteModal = false">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="closeDeleteBox()">Ok</button>
+    </div>
+</clr-modal>

@@ -1,0 +1,23 @@
+<form>
+    <form class="email">
+        <mat-form-field style="width:26vw" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="" name="email" [(ngModel)]="login.email"
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" autocomplete="off">
+            <mat-error>invalid email</mat-error>
+        </mat-form-field>
+    </form>
+
+    <form class="password">
+        <mat-form-field style="width:26vw" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="" name="password" type="password" [(ngModel)]="login.password"
+                autocomplete="off">
+        </mat-form-field>
+    </form>
+    <form (ngSubmit)="submit()">
+        <div>
+            <button mat-flat-button color="primary" appearance="outline" style="width:26vw"
+                color="success">Login</button>
+        </div>
+    </form>

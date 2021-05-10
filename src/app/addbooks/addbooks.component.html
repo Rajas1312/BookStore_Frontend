@@ -1,0 +1,50 @@
+<div class="card" (click)=openBox()>
+    Add Books
+</div>
+
+<clr-modal [(clrModalOpen)]="openModal">
+    <h3 class="modal-title">Add Book</h3>
+    <div class="modal-body">
+        <form clrForm clrLayout="vertical">
+            <clr-input-container>
+                <label>BookName</label>
+                <input clrInput type="text" name="text" [(ngModel)]="addBook.bookName" style="width:26vw" required />
+            </clr-input-container>
+
+            <clr-input-container>
+                <label>Author</label>
+                <input clrInput type="text" name="password" type="text" [(ngModel)]="addBook.author" style="width:26vw"
+                    required />
+            </clr-input-container>
+
+            <clr-input-container>
+                <label>Description</label>
+                <input clrInput type="text" name="password" type="text" [(ngModel)]="addBook.description"
+                    style="width:26vw" required />
+            </clr-input-container>
+
+            <clr-input-container>
+                <label>Quantity</label>
+                <input clrInput type="text" name="password" type="text" [(ngModel)]="addBook.quantity"
+                    style="width:26vw" required />
+            </clr-input-container>
+
+            <clr-input-container>
+                <label>Price</label>
+                <input clrInput type="text" name="password" type="text" [(ngModel)]="addBook.price" style="width:26vw"
+                    required />
+            </clr-input-container>
+
+            <clr-input-container>
+                <label>Discount Price</label>
+                <input clrInput type="text" name="password" type="text" [(ngModel)]="addBook.discountPrice"
+                    style="width:26vw" required />
+            </clr-input-container>
+
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="openModal = false">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="submit()">Ok</button>
+    </div>
+</clr-modal>

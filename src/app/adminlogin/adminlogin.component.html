@@ -1,0 +1,34 @@
+<div class="main-container">
+    <div class="clr-col-lg-5 clr-col-md-8 clr-col-12">
+        <div class="card">
+            <div class="card-header">
+                <cds-icon shape="book" size="20"></cds-icon>
+                Admin Login
+            </div>
+            <div class="form-container">
+                <div>
+                    <form clrForm clrLayout="vertical">
+                        <clr-input-container>
+                            <label>Email</label>
+                            <input clrInput type="text" name="email" [(ngModel)]="login.email" style="width:26vw"
+                                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required />
+                            <clr-control-error>Invalid Email </clr-control-error>
+                        </clr-input-container>
+
+                        <clr-input-container>
+                            <label>Password</label>
+                            <input clrInput type="text" name="password" type="password" [(ngModel)]="login.password"
+                                style="width:26vw" required />
+                            <clr-control-error>Invalid Password </clr-control-error>
+                        </clr-input-container>
+                    </form>
+                </div>
+                <form (ngSubmit)="submit()">
+                    <div class="button">
+                        <button class="btn btn-primary" style="width:26vw">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

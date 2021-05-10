@@ -1,0 +1,46 @@
+<div class="firstame-lastname">
+    <form>
+        <form class="firstname">
+            <mat-form-field style="width:26vw" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input id="fname" matInput placeholder="First Name" name="fname" [(ngModel)]="register.firstName"
+                    autocomplete="off">
+            </mat-form-field>
+
+            <mat-form-field style="width:26vw" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Last Name" name="lname" [(ngModel)]="register.lastName" autocomplete="off">
+            </mat-form-field>
+        </form>
+        <form>
+            <mat-form-field style="width:26vw" appearance="outline">
+                <mat-label>EmailId</mat-label>
+                <input matInput placeholder="EmailId" name="email" [(ngModel)]="register.email"
+                    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" autocomplete=" off" autocomplete="off">
+                <mat-error>invalid email</mat-error>
+            </mat-form-field>
+        </form>
+
+        <form>
+            <mat-form-field style="width:26vw" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput placeholder="password" name="password" [(ngModel)]="register.password"
+                    autocomplete="off">
+            </mat-form-field>
+
+            <!-- <mat-form-field>
+                <mat-label>Confirm</mat-label>
+                <input type="password" matInput placeholder="Confirm">
+            </mat-form-field> -->
+        </form>
+        <div class="button">
+            <form (ngSubmit)="submit()">
+                <div>
+                    <button mat-flat-button color="success" style="width:26vw">Sign Up</button>
+                </div>
+            </form>
+
+        </div>
+    </form>
+
+</div>
