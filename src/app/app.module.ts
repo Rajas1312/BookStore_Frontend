@@ -35,12 +35,12 @@ import { AdminloginComponent } from './components/adminlogin/adminlogin.componen
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import '@cds/core/icon/register.js';
-import { ClarityIcons, bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shoppingCartIcon } from '@cds/core/icon';
+import { ClarityIcons, bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shoppingCartIcon, plusCircleIcon, minusCircleIcon } from '@cds/core/icon';
 import { AddbooksComponent } from './components/addbooks/addbooks.component';
 import { GetbooksComponent } from './components/getbooks/getbooks.component';
 import { UsergetbookComponent } from './components/usergetbook/usergetbook.component';
 import { AddtocartComponent } from './components/addtocart/addtocart.component';
-ClarityIcons.addIcons(bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shoppingCartIcon);
+ClarityIcons.addIcons(bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shoppingCartIcon, plusCircleIcon, minusCircleIcon);
 
 @NgModule({
   declarations: [

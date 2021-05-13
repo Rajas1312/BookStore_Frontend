@@ -43,25 +43,122 @@
 
 
 <div class="main-box" fxLayout="row" fxLayoutAlign="space-around">
-    <div class="boxes" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <div class="boxes" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2vw">
         <div class="cart-box">
             <div fxLayout="row" fxLayoutAlign="space-between" class="my-cart">
-                <div>adasd</div>
+                <div>My cart(3)</div>
                 <div></div>
             </div>
-            <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="row" fxLayoutAlign="space-between" *ngFor="let array of arr;index as i"
+                style="margin-bottom:1vw;">
                 <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap=10px>
                     <div><img id="book" src="../../assets/Image 11.png"></div>
-                    <div>mdad</div>
+                    <div fxLayout="column" fxLayoutAlign="space-evenly">
+                        <div class="book-name">{{array.product_id.bookName}}</div>
+                        <div class="author">by {{array.product_id.author}}</div>
+                        <div class="price">Rs. {{array.product_id.price}}</div>
+                        <div fxLayout="row">
+                            <div>
+                                <cds-icon shape="minus-circle" size="16" (click)="decrementQuantity()">
+                                </cds-icon>
+                            </div>
+                            <div class="quantity-box">{{quantity}}</div>
+                            <div>
+                                <cds-icon shape="plus-circle" size="16" (click)=" incrementQuantity() ">
+                                </cds-icon>
+                            </div>
+                            <div class="remove" fxLayout="row">Remove</div>
+                        </div>
+                    </div>
                 </div>
-                <div fxLayout="column" fxLayoutAlign="flex-end">asdad</div>
+                <div fxLayout="column" fxLayoutAlign="flex-end" *ngIf="i==arr.length-1">
+                    <button type="button" class="btn btn-primary" (click)="openBox(1)">place order</button>
+                </div>
             </div>
         </div>
-        <div class="cart-box" *ngIf="openedBox==1">
-            adsa
+
+        <div class="cart-box my-cart" *ngIf="openedBox!=1">
+            Customer Details
         </div>
-        <div class="cart-box" *ngIf="openedBox!=1">
-            msfs
+
+        <div class="cart-box" *ngIf="openedBox==1">
+            <div class="my-cart">Customer Details</div>
+            <div class="main-customer" fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw">
+                    <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw">
+                        <div>
+                            <input class="form-box" placeholder="Name">
+                        </div>
+                        <div>
+                            <input class="form-box" placeholder="Phone Number">
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw">
+                        <div>
+                            <input class="form-box" placeholder="Pincode">
+                        </div>
+                        <div>
+                            <input class="form-box" placeholder="Locality">
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="start">
+                        <div>
+                            <textarea style="width: 34.5vw;" placeholder="Address"></textarea>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw">
+                        <div>
+                            <input class="form-box" placeholder="City">
+                        </div>
+                        <div>
+                            <input class="form-box" placeholder="Town">
+                        </div>
+                    </div>
+                    <div fxLayout="column" fxLayoutAlign="flex-start">
+                        <clr-radio-container clrInline>
+                            <label>Type</label>
+                            <clr-radio-wrapper>
+                                <input type="radio" clrRadio name="options" required value="option1" />
+                                <label>Home</label>
+                            </clr-radio-wrapper>
+                            <clr-radio-wrapper>
+                                <input type="radio" clrRadio name="options" required value="option2" />
+                                <label>Work</label>
+                            </clr-radio-wrapper>
+                            <clr-radio-wrapper>
+                                <input type="radio" clrRadio name="options" required value="option2" />
+                                <label>Other</label>
+                            </clr-radio-wrapper>
+                            <clr-control-error>This field is required!</clr-control-error>
+                        </clr-radio-container>
+                    </div>
+                </div>
+
+
+                <div fxLayout="column" fxLayoutAlign="flex-end">
+                    <button type="button" class="btn btn-primary" (click)="openBox2(1)">Continue</button>
+                </div>
+            </div>
+        </div>
+        <div class="cart-box my-cart" *ngIf="openedBox2!=1">
+            Order Details
+        </div>
+        <div class="cart-box my-cart" *ngIf="openedBox2==1">
+            <div fxLayout="row" fxLayoutAlign="space-between" *ngFor="let array of arr;index as i"
+                style="margin-bottom:1vw;">
+                <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap=10px>
+                    <div><img id="book" src="../../assets/Image 11.png"></div>
+                    <div fxLayout="column" fxLayoutAlign="space-evenly">
+                        <div class="book-name">{{array.product_id.bookName}}</div>
+                        <div class="author">by {{array.product_id.author}}</div>
+                        <div class="price">Rs. {{array.product_id.price}}</div>
+
+                    </div>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="flex-end" *ngIf="i==arr.length-1">
+                    <button type="button" class="btn btn-primary" (click)="openBox(1)">place order</button>
+                </div>
+            </div>
         </div>
     </div>
     <div></div>

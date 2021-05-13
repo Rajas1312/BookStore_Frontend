@@ -16,4 +16,11 @@ export class BookserviceService {
     });
     return this.http.post(environment.adminURL + 'add_cart_item/' + localStorage.getItem('addToBag'), '', { headers: reqHeader })
   }
+  getCart() {
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': '' + localStorage.getItem('usertoken')
+    });
+    return this.http.get(environment.adminURL + 'get_cart_items', { headers: reqHeader })
+  }
 }
