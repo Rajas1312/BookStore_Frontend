@@ -1,7 +1,7 @@
 import { UpdateBook } from './update.model';
 import { Component, OnInit } from '@angular/core';
-import { InteractionService } from '../interaction.service';
-import { RegisterService } from '../user.service';
+import { InteractionService } from '../../service/interaction.service';
+import { RegisterService } from '../../service/user.service';
 
 @Component({
   selector: 'app-getbooks',

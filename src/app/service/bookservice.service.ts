@@ -11,9 +11,9 @@ export class BookserviceService {
 
   addToBag() {
     var reqHeader = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDliODMwNjY3MjNmOTAwMTU5N2RkYTkiLCJpYXQiOjE2MjA4ODA3MDcsImV4cCI6MTYyMDk2NzEwN30.BPWwpRjto7pagB2BMdcxSMhZGmW88s-Rt1vWrsYK_uE'
+      // 'Content-Type': 'application/json',
+      'x-access-token': '' + localStorage.getItem('usertoken')
     });
-    return this.http.post('https://backend-bookstore.herokuapp.com/bookstore_user/add_cart_item/' + localStorage.getItem('addToBag'), { headers: reqHeader })
+    return this.http.post(environment.adminURL + 'add_cart_item/' + localStorage.getItem('addToBag'), '', { headers: reqHeader })
   }
 }

@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { AuthGuard } from './auth-guard.service';
 
@@ -27,18 +27,19 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { RegisterloginComponent } from './registerlogin/registerlogin.component';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RegisterloginComponent } from './components/registerlogin/registerlogin.component';
 import { ClarityModule } from '@clr/angular';
-import { AdminloginComponent } from './adminlogin/adminlogin.component';
-import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
+import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import '@cds/core/icon/register.js';
 import { ClarityIcons, bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shoppingCartIcon } from '@cds/core/icon';
-import { AddbooksComponent } from './addbooks/addbooks.component';
-import { GetbooksComponent } from './getbooks/getbooks.component';
-import { UsergetbookComponent } from './usergetbook/usergetbook.component';
+import { AddbooksComponent } from './components/addbooks/addbooks.component';
+import { GetbooksComponent } from './components/getbooks/getbooks.component';
+import { UsergetbookComponent } from './components/usergetbook/usergetbook.component';
+import { AddtocartComponent } from './components/addtocart/addtocart.component';
 ClarityIcons.addIcons(bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shoppingCartIcon);
 
 @NgModule({
@@ -54,6 +55,7 @@ ClarityIcons.addIcons(bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shopping
     AddbooksComponent,
     GetbooksComponent,
     UsergetbookComponent,
+    AddtocartComponent,
 
   ],
   imports: [

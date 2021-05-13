@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -56,12 +56,6 @@ export class RegisterService {
     return this.http.delete(environment.adminURL + 'admin/delete/book/' + localStorage.getItem('deleteId'), { headers: reqHeader })
   }
 
-  addToBag() {
-    var reqHeader = new HttpHeaders({
-      // 'Content-Type': 'application/json',
-      'x-access-token': '' + localStorage.getItem('usertoken')
-    });
-    return this.http.post(environment.adminURL + 'add_cart_item/' + localStorage.getItem('addToBag'), '', { headers: reqHeader })
-  }
+
 }
 

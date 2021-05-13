@@ -1,6 +1,6 @@
 import { Login } from './adminlogin.model';
 import { Component, OnInit } from '@angular/core';
-import { RegisterService } from '../user.service';
+import { RegisterService } from '../../service/user.service';
 import { Router } from '@angular/router';
 import '@cds/core/icon/register.js';
 import { ClarityIcons, bookIcon, mapIcon } from '@cds/core/icon';

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BookserviceService } from '../service/bookservice.service';
-import { RegisterService } from '../user.service';
+import { BookserviceService } from '../../service/bookservice.service';
+import { RegisterService } from '../../service/user.service';
 
 @Component({
   selector: 'app-usergetbook',
@@ -31,7 +31,7 @@ export class UsergetbookComponent implements OnInit {
     this.id = data
     this.isBag = true
     localStorage.setItem('addToBag', this.id)
-    this.dataservice.addToBag().subscribe(res => {
+    this.service.addToBag().subscribe(res => {
       console.log(res)
     }, err => {
       console.log(err)

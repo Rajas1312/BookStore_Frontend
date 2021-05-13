@@ -2,7 +2,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Login } from './login.model';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { RegisterService } from '../user.service';
+import { RegisterService } from '../../service/user.service';
 import { Router } from '@angular/router';
 
 @Component({

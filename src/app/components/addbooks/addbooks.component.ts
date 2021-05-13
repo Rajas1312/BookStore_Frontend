@@ -1,8 +1,8 @@
 import { AddBook } from './addbooks.model';
 import { Component, OnInit } from '@angular/core';
-import { RegisterService } from '../user.service';
+import { RegisterService } from '../../service/user.service';
 import { Router } from '@angular/router';
-import { InteractionService } from '../interaction.service';
+import { InteractionService } from '../../service/interaction.service';
 
 @Component({
   selector: 'app-addbooks',
