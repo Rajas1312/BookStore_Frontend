@@ -29,14 +29,12 @@ export class LoginComponent implements OnInit {
   submit() {
     this.dataservice.loginUser(this.login).subscribe(res => {
       this.data = res
-      this.token = this.data.token
-      localStorage.setItem('token', this.token)
-      this.router.navigate([''])
+      console.log(this.data.result.accessToken)
+      this.token = this.data.result.accessToken
+      localStorage.setItem('usertoken', this.token)
+      this.router.navigate(['userdashboard'])
     }, error => {
       console.log(error)
-      this._snackBar.open('invalid cerdentials!', '', {
-        duration: 3000
-      })
     })
     return true
   }

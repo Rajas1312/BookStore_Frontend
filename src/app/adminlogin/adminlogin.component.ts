@@ -27,6 +27,7 @@ export class AdminloginComponent implements OnInit {
     this.dataservice.loginAdmin(this.login).subscribe(res => {
       this.data = res
       this.token = this.data.result.accessToken
+      console.log(this.token)
       localStorage.setItem('token', this.token)
       this.router.navigate(['admindashboard'])
     }, error => {

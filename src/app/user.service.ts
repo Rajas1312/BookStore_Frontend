@@ -17,7 +17,7 @@ export class RegisterService {
   loginUser(data: any) {
     this.data1 = data
     localStorage.setItem('email', this.data1.email)
-    return this.http.post(environment.baseURL + 'login', data)
+    return this.http.post(environment.adminURL + 'login', data)
   }
 
   loginAdmin(result: any) {
@@ -54,6 +54,14 @@ export class RegisterService {
       'x-access-token': '' + localStorage.getItem('token')
     });
     return this.http.delete(environment.adminURL + 'admin/delete/book/' + localStorage.getItem('deleteId'), { headers: reqHeader })
+  }
+
+  addToBag() {
+    var reqHeader = new HttpHeaders({
+      // 'Content-Type': 'application/json',
+      'x-access-token': '' + localStorage.getItem('usertoken')
+    });
+    return this.http.post(environment.adminURL + 'add_cart_item/' + localStorage.getItem('addToBag'), '', { headers: reqHeader })
   }
 }
 

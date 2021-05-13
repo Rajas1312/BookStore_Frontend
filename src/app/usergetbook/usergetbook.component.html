@@ -1,0 +1,22 @@
+<div class="main" fxLayout="row wrap">
+    <div class="card " *ngFor="let array of arr" fxFlex="20" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100">
+        <div class="card-img" fxLayout="row" fxLayoutAlign="center">
+            <img id="book" src="../../assets/Image 11.png">
+        </div>
+        <div class="card-block">
+            <div class="book-title">
+                {{array.bookName}}
+            </div>
+            <div class="sub-title">{{array.author}}</div>
+            <div fxLayout="row" fxLayoutGap="5px">
+                <div class="price">Rs. {{array.price}}</div>
+                <div style="font-size: 12px;">Rs({{array.discountPrice}})</div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <button class=" btn btn-primary" *ngIf="id==array._id">Added to bag</button>
+                <button class=" btn btn-primary" *ngIf="id!=array._id" (click)="adToBag(array._id)">Add to Bag</button>
+                <button class="btn btn-outline" *ngIf="id!=array._id">Wish List</button>
+            </div>
+        </div>
+    </div>
+</div>

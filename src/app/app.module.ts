@@ -38,6 +38,7 @@ import '@cds/core/icon/register.js';
 import { ClarityIcons, bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shoppingCartIcon } from '@cds/core/icon';
 import { AddbooksComponent } from './addbooks/addbooks.component';
 import { GetbooksComponent } from './getbooks/getbooks.component';
+import { UsergetbookComponent } from './usergetbook/usergetbook.component';
 ClarityIcons.addIcons(bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shoppingCartIcon);
 
 @NgModule({
@@ -52,6 +53,7 @@ ClarityIcons.addIcons(bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shopping
     AdmindashboardComponent,
     AddbooksComponent,
     GetbooksComponent,
+    UsergetbookComponent,
 
   ],
   imports: [

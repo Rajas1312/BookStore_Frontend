@@ -1,3 +1,4 @@
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { LoginComponent } from './login/login.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: '', component: RegisterloginComponent, children: [{ path: 'register', component: RegistrationComponent }, { path: 'login', component: LoginComponent }] },
   { path: 'forgotpassword', component: ForgotpasswordComponent },
   { path: 'admin', component: AdminloginComponent },
-  { path: 'admindashboard', component: AdmindashboardComponent }
+  { path: 'admindashboard', component: AdmindashboardComponent },
+  { path: 'userdashboard', component: DashboardComponent }
 ];
 
 
