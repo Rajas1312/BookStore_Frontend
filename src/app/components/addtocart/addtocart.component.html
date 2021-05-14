@@ -30,10 +30,12 @@
         <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100">
 
             <div class="content-3" fxLayout="row" fxLayoutGap="5px">
-                <div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100"
+                    fxFlex.xs="100">
                     <cds-icon shape="user" size="24"></cds-icon>
                 </div>
-                <div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100"
+                    fxFlex.xs="100">
                     <cds-icon shape="shopping-cart" size="24"></cds-icon>
                 </div>
             </div>
@@ -46,10 +48,10 @@
     <div class="boxes" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2vw">
         <div class="cart-box">
             <div fxLayout="row" fxLayoutAlign="space-between" class="my-cart">
-                <div>My cart(3)</div>
+                <div>My cart({{length}})</div>
                 <div></div>
             </div>
-            <div fxLayout="row" fxLayoutAlign="space-between" *ngFor="let array of arr;index as i"
+            <div class="loop-cart" fxLayout="row" fxLayoutAlign="space-between" *ngFor="let array of arr;index as i"
                 style="margin-bottom:1vw;">
                 <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap=10px>
                     <div><img id="book" src="../../assets/Image 11.png"></div>
@@ -62,7 +64,7 @@
                                 <cds-icon shape="minus-circle" size="16" (click)="decrementQuantity()">
                                 </cds-icon>
                             </div>
-                            <div class="quantity-box">{{quantity}}</div>
+                            <div class="quantity-box">{{array.product_id.quantity}}</div>
                             <div>
                                 <cds-icon shape="plus-circle" size="16" (click)=" incrementQuantity() ">
                                 </cds-icon>
@@ -85,7 +87,8 @@
             <div class="my-cart">Customer Details</div>
             <div class="main-customer" fxLayout="row" fxLayoutAlign="space-between">
                 <div fxLayout="column" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw">
-                    <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw">
+                    <div fxLayout="row" fxLayoutAlign="space-evenly" fxFlex.md="100" fxLayoutAlign="flex-start"
+                        fxFlex.sm="100" fxLayoutAlign="flex-start" fxFlex.xs="100" fxLayoutAlign="flex-start">
                         <div>
                             <input class="form-box" placeholder="Name">
                         </div>
@@ -93,7 +96,8 @@
                             <input class="form-box" placeholder="Phone Number">
                         </div>
                     </div>
-                    <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw">
+                    <div fxLayout="row" fxLayoutAlign="space-evenly" fxFlex.md="100" fxLayoutAlign="flex-start"
+                        fxFlex.sm="100" fxLayoutAlign="flex-start" fxFlex.xs="100" fxLayoutAlign="flex-start">
                         <div>
                             <input class="form-box" placeholder="Pincode">
                         </div>
@@ -101,12 +105,15 @@
                             <input class="form-box" placeholder="Locality">
                         </div>
                     </div>
-                    <div fxLayout="row" fxLayoutAlign="start">
+                    <div class="address" fxLayout="row" fxLayoutAlign="space-evenly" fxFlex.md="100"
+                        fxLayoutAlign="flex-start" fxFlex.sm="100" fxLayoutAlign="flex-start" fxFlex.xs="100"
+                        fxLayoutAlign="flex-start">
                         <div>
-                            <textarea style="width: 34.5vw;" placeholder="Address"></textarea>
+                            <textarea style="width: 34vw;" placeholder="Address"></textarea>
                         </div>
                     </div>
-                    <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw">
+                    <div fxLayout="row" fxLayoutAlign="space-evenly" fxFlex.md="100" fxLayoutAlign="flex-start"
+                        fxFlex.sm="100" fxLayoutAlign="flex-start" fxFlex.xs="100" fxLayoutAlign="flex-start">
                         <div>
                             <input class="form-box" placeholder="City">
                         </div>
@@ -133,8 +140,6 @@
                         </clr-radio-container>
                     </div>
                 </div>
-
-
                 <div fxLayout="column" fxLayoutAlign="flex-end">
                     <button type="button" class="btn btn-primary" (click)="openBox2(1)">Continue</button>
                 </div>

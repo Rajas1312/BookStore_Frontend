@@ -13,6 +13,7 @@ export class AddtocartComponent implements OnInit {
   quantity = 1
   arr: any;
   data: any
+  length: any
   constructor(private service: BookserviceService) { }
 
   ngOnInit(): void {
@@ -31,6 +32,7 @@ export class AddtocartComponent implements OnInit {
       console.log(res)
       this.data = res
       this.arr = this.data.result
+      this.length = this.data.result.length
     }, err => {
       console.log(err)
     })
@@ -41,7 +43,12 @@ export class AddtocartComponent implements OnInit {
   }
 
   decrementQuantity() {
-    return this.quantity--;
+    if (this.quantity == 0) {
+      return this.quantity = 0
+    } else {
+      return this.quantity--;
+    }
+
   }
 
 }
