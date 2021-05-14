@@ -1,3 +1,5 @@
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { BookserviceService } from 'src/app/service/bookservice.service';
 
@@ -12,9 +14,21 @@ export class AddtocartComponent implements OnInit {
   openedBox2 = null;
   quantity = 1
   arr: any;
-  data: any
-  length: any
-  constructor(private service: BookserviceService) { }
+  data: any;
+  length: any;
+
+  constructor(private service: BookserviceService, private router: Router, private fb: FormBuilder) { }
+
+  customerForm = this.fb.group({
+    name: ['', [Validators.required]],
+    phoneNumber: ['', [Validators.required]],
+    pincode: ['', [Validators.required]],
+    locality: ['', [Validators.required]],
+    address: ['', [Validators.required]],
+    city: ['', [Validators.required]],
+    town: ['', [Validators.required]],
+
+  });
 
   ngOnInit(): void {
     this.submit()
@@ -22,9 +36,14 @@ export class AddtocartComponent implements OnInit {
 
   openBox(data: any) {
     this.openedBox = data
+
   }
   openBox2(data: any) {
-    this.openedBox2 = data
+    if (this.customerForm.touched && this.customerForm.valid) {
+      this.openedBox2 = data
+    }
+    console.log(this.customerForm.value)
+
   }
 
   submit() {
@@ -48,7 +67,16 @@ export class AddtocartComponent implements OnInit {
     } else {
       return this.quantity--;
     }
-
   }
+  deleteFromCart(data: any) {
+    localStorage.setItem('deleteCart', data)
+    this.service.deleteFromCart().subscribe(res => {
+      console.log(res)
+      this.submit()
+    }, err => {
+      console.log(err)
+    })
+  }
+
 
 }

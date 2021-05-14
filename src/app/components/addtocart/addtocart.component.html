@@ -69,7 +69,7 @@
                                 <cds-icon shape="plus-circle" size="16" (click)=" incrementQuantity() ">
                                 </cds-icon>
                             </div>
-                            <div class="remove" fxLayout="row">Remove</div>
+                            <div class="remove" fxLayout="row" (click)="deleteFromCart(array._id)">Remove</div>
                         </div>
                     </div>
                 </div>
@@ -86,60 +86,109 @@
         <div class="cart-box" *ngIf="openedBox==1">
             <div class="my-cart">Customer Details</div>
             <div class="main-customer" fxLayout="row" fxLayoutAlign="space-between">
-                <div fxLayout="column" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw">
-                    <div fxLayout="row" fxLayoutAlign="space-evenly" fxFlex.md="100" fxLayoutAlign="flex-start"
-                        fxFlex.sm="100" fxLayoutAlign="flex-start" fxFlex.xs="100" fxLayoutAlign="flex-start">
-                        <div>
-                            <input class="form-box" placeholder="Name">
+
+                <form [formGroup]="customerForm">
+                    <div fxLayout="column" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw">
+                        <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw" fxFlex.md="100"
+                            fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100" fxLayoutAlign="flex-start"
+                            fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayoutAlign="flex-start" fxLayoutGap="0.5vw">
+                            <div>
+                                <input id="name" class="form-box" placeholder="Name" formControlName="name">
+                                <clr-control-error class="error"
+                                    *ngIf="customerForm.controls.name.errors &&customerForm.controls.name.touched">This
+                                    field is
+                                    required!
+                                </clr-control-error>
+                            </div>
+                            <div>
+                                <input class="form-box" placeholder="Phone Number" formControlName="phoneNumber"
+                                    type="text">
+                                <clr-control-error class="error"
+                                    *ngIf="customerForm.controls.phoneNumber.errors &&customerForm.controls.phoneNumber.touched">
+                                    This
+                                    field is
+                                    required!
+                                </clr-control-error>
+                            </div>
                         </div>
-                        <div>
-                            <input class="form-box" placeholder="Phone Number">
+                        <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw" fxFlex.md="100"
+                            fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100" fxLayoutAlign="flex-start"
+                            fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayoutAlign="flex-start" fxLayoutGap="0.5vw">
+                            <div>
+                                <input class="form-box" placeholder="Pincode" formControlName="pincode">
+                                <clr-control-error class="error"
+                                    *ngIf="customerForm.controls.pincode.errors &&customerForm.controls.pincode.touched">
+                                    This
+                                    field is
+                                    required!
+                                </clr-control-error>
+                            </div>
+                            <div>
+                                <input class="form-box" placeholder="Locality" formControlName="locality">
+                                <clr-control-error class="error"
+                                    *ngIf="customerForm.controls.locality.errors &&customerForm.controls.locality.touched">
+                                    This
+                                    field is
+                                    required!
+                                </clr-control-error>
+                            </div>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw" fxFlex.md="100"
+                            fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100" fxLayoutAlign="flex-start"
+                            fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayoutAlign="flex-start" fxLayoutGap="0.5vw">
+                            <div>
+                                <textarea style="width: 34.5vw;" placeholder="Address"
+                                    formControlName="address"></textarea>
+                                <clr-control-error class="error"
+                                    *ngIf="customerForm.controls.address.errors &&customerForm.controls.address.touched">
+                                    This
+                                    field is
+                                    required!
+                                </clr-control-error>
+                            </div>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw" fxFlex.md="100"
+                            fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100" fxLayoutAlign="flex-start"
+                            fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayoutAlign="flex-start" fxLayoutGap="0.5vw">
+                            <div>
+                                <input class="form-box" placeholder="City" formControlName="city">
+                                <clr-control-error class="error"
+                                    *ngIf="customerForm.controls.city.errors &&customerForm.controls.city.touched">
+                                    This
+                                    field is
+                                    required!
+                                </clr-control-error>
+                            </div>
+                            <div>
+                                <input class="form-box" placeholder="Town" formControlName="town">
+                                <clr-control-error class="error"
+                                    *ngIf="customerForm.get('town')?.errors &&customerForm.controls.town.touched">
+                                    This
+                                    field is
+                                    required!
+                                </clr-control-error>
+                            </div>
+                        </div>
+                        <div fxLayout="column" fxLayoutAlign="flex-start">
+                            <clr-radio-container clrInline>
+                                <label>Type</label>
+                                <clr-radio-wrapper>
+                                    <input type="radio" clrRadio name="options" required value="option1" />
+                                    <label>Home</label>
+                                </clr-radio-wrapper>
+                                <clr-radio-wrapper>
+                                    <input type="radio" clrRadio name="options" required value="option2" />
+                                    <label>Work</label>
+                                </clr-radio-wrapper>
+                                <clr-radio-wrapper>
+                                    <input type="radio" clrRadio name="options" required value="option2" />
+                                    <label>Other</label>
+                                </clr-radio-wrapper>
+                                <clr-control-error>This field is required!</clr-control-error>
+                            </clr-radio-container>
                         </div>
                     </div>
-                    <div fxLayout="row" fxLayoutAlign="space-evenly" fxFlex.md="100" fxLayoutAlign="flex-start"
-                        fxFlex.sm="100" fxLayoutAlign="flex-start" fxFlex.xs="100" fxLayoutAlign="flex-start">
-                        <div>
-                            <input class="form-box" placeholder="Pincode">
-                        </div>
-                        <div>
-                            <input class="form-box" placeholder="Locality">
-                        </div>
-                    </div>
-                    <div class="address" fxLayout="row" fxLayoutAlign="space-evenly" fxFlex.md="100"
-                        fxLayoutAlign="flex-start" fxFlex.sm="100" fxLayoutAlign="flex-start" fxFlex.xs="100"
-                        fxLayoutAlign="flex-start">
-                        <div>
-                            <textarea style="width: 34vw;" placeholder="Address"></textarea>
-                        </div>
-                    </div>
-                    <div fxLayout="row" fxLayoutAlign="space-evenly" fxFlex.md="100" fxLayoutAlign="flex-start"
-                        fxFlex.sm="100" fxLayoutAlign="flex-start" fxFlex.xs="100" fxLayoutAlign="flex-start">
-                        <div>
-                            <input class="form-box" placeholder="City">
-                        </div>
-                        <div>
-                            <input class="form-box" placeholder="Town">
-                        </div>
-                    </div>
-                    <div fxLayout="column" fxLayoutAlign="flex-start">
-                        <clr-radio-container clrInline>
-                            <label>Type</label>
-                            <clr-radio-wrapper>
-                                <input type="radio" clrRadio name="options" required value="option1" />
-                                <label>Home</label>
-                            </clr-radio-wrapper>
-                            <clr-radio-wrapper>
-                                <input type="radio" clrRadio name="options" required value="option2" />
-                                <label>Work</label>
-                            </clr-radio-wrapper>
-                            <clr-radio-wrapper>
-                                <input type="radio" clrRadio name="options" required value="option2" />
-                                <label>Other</label>
-                            </clr-radio-wrapper>
-                            <clr-control-error>This field is required!</clr-control-error>
-                        </clr-radio-container>
-                    </div>
-                </div>
+                </form>
                 <div fxLayout="column" fxLayoutAlign="flex-end">
                     <button type="button" class="btn btn-primary" (click)="openBox2(1)">Continue</button>
                 </div>
@@ -161,7 +210,8 @@
                     </div>
                 </div>
                 <div fxLayout="column" fxLayoutAlign="flex-end" *ngIf="i==arr.length-1">
-                    <button type="button" class="btn btn-primary" (click)="openBox(1)">place order</button>
+                    <button type="button" class="btn btn-primary" (click)="openBox(1)" routerLink="/order">place
+                        order</button>
                 </div>
             </div>
         </div>

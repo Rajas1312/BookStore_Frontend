@@ -23,4 +23,11 @@ export class BookserviceService {
     });
     return this.http.get(environment.adminURL + 'get_cart_items', { headers: reqHeader })
   }
+  deleteFromCart() {
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': '' + localStorage.getItem('usertoken')
+    });
+    return this.http.delete(environment.adminURL + 'remove_cart_item/' + localStorage.getItem('deleteCart'), { headers: reqHeader })
+  }
 }

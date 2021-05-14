@@ -8,6 +8,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegisterloginComponent } from './components/registerlogin/registerlogin.component';
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 import { AddtocartComponent } from './components/addtocart/addtocart.component';
+import { OrderComponent } from './components/order/order.component';
+
 
 
 const routes: Routes = [
@@ -17,7 +19,8 @@ const routes: Routes = [
   { path: 'admin', component: AdminloginComponent },
   { path: 'admindashboard', component: AdmindashboardComponent },
   { path: 'userdashboard', component: DashboardComponent },
-  { path: 'cart', component: AddtocartComponent }
+  { path: 'cart', component: AddtocartComponent },
+  { path: 'order', component: OrderComponent }
 
 ];
 
