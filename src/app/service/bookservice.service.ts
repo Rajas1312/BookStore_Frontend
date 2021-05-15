@@ -30,4 +30,20 @@ export class BookserviceService {
     });
     return this.http.delete(environment.adminURL + 'remove_cart_item/' + localStorage.getItem('deleteCart'), { headers: reqHeader })
   }
+
+  addCustomer(data: any) {
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': '' + localStorage.getItem('usertoken')
+    });
+    return this.http.put(environment.adminURL + 'edit_user', data, { headers: reqHeader })
+  }
+
+  placeOrder(data: any) {
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': '' + localStorage.getItem('usertoken')
+    });
+    return this.http.post(environment.adminURL + 'add/order', data, { headers: reqHeader })
+  }
 }

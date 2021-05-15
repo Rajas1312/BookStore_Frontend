@@ -91,7 +91,8 @@
                     <div fxLayout="column" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw">
                         <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw" fxFlex.md="100"
                             fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100" fxLayoutAlign="flex-start"
-                            fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayoutAlign="flex-start" fxLayoutGap="0.5vw">
+                            fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayout.xs="column" fxLayout.sm="column"
+                            fxLayoutAlign="flex-start" fxLayoutGap="0.5vw">
                             <div>
                                 <input id="name" class="form-box" placeholder="Name" formControlName="name">
                                 <clr-control-error class="error"
@@ -113,7 +114,8 @@
                         </div>
                         <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw" fxFlex.md="100"
                             fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100" fxLayoutAlign="flex-start"
-                            fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayoutAlign="flex-start" fxLayoutGap="0.5vw">
+                            fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayout.xs="column" fxLayout.sm="column"
+                            fxLayoutAlign="flex-start" fxLayoutGap="0.5vw">
                             <div>
                                 <input class="form-box" placeholder="Pincode" formControlName="pincode">
                                 <clr-control-error class="error"
@@ -135,7 +137,8 @@
                         </div>
                         <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw" fxFlex.md="100"
                             fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100" fxLayoutAlign="flex-start"
-                            fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayoutAlign="flex-start" fxLayoutGap="0.5vw">
+                            fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayout.xs="column" fxLayout.sm="column"
+                            fxLayoutAlign="flex-start" fxLayoutGap="0.5vw">
                             <div>
                                 <textarea style="width: 34.5vw;" placeholder="Address"
                                     formControlName="address"></textarea>
@@ -149,7 +152,8 @@
                         </div>
                         <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw" fxFlex.md="100"
                             fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100" fxLayoutAlign="flex-start"
-                            fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayoutAlign="flex-start" fxLayoutGap="0.5vw">
+                            fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayout.xs="column" fxLayout.sm="column"
+                            fxLayoutAlign="flex-start" fxLayoutGap="0.5vw">
                             <div>
                                 <input class="form-box" placeholder="City" formControlName="city">
                                 <clr-control-error class="error"
@@ -173,15 +177,18 @@
                             <clr-radio-container clrInline>
                                 <label>Type</label>
                                 <clr-radio-wrapper>
-                                    <input type="radio" clrRadio name="options" required value="option1" />
+                                    <input type="radio" clrRadio name="addressType" required value="Home"
+                                        formControlName="addressType" />
                                     <label>Home</label>
                                 </clr-radio-wrapper>
                                 <clr-radio-wrapper>
-                                    <input type="radio" clrRadio name="options" required value="option2" />
-                                    <label>Work</label>
+                                    <input type="radio" clrRadio name="addressType" required value="Office"
+                                        formControlName="addressType" />
+                                    <label>Office</label>
                                 </clr-radio-wrapper>
                                 <clr-radio-wrapper>
-                                    <input type="radio" clrRadio name="options" required value="option2" />
+                                    <input type="radio" clrRadio name="addressType" required value="Other"
+                                        formControlName="addressType" />
                                     <label>Other</label>
                                 </clr-radio-wrapper>
                                 <clr-control-error>This field is required!</clr-control-error>
@@ -191,6 +198,7 @@
                 </form>
                 <div fxLayout="column" fxLayoutAlign="flex-end">
                     <button type="button" class="btn btn-primary" (click)="openBox2(1)">Continue</button>
+                    <span class="error" *ngIf="clickerror==1">invalid</span>
                 </div>
             </div>
         </div>
@@ -210,7 +218,7 @@
                     </div>
                 </div>
                 <div fxLayout="column" fxLayoutAlign="flex-end" *ngIf="i==arr.length-1">
-                    <button type="button" class="btn btn-primary" (click)="openBox(1)" routerLink="/order">place
+                    <button type="button" class="btn btn-primary" (click)="placeOrder()">place
                         order</button>
                 </div>
             </div>

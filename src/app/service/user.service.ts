@@ -24,6 +24,13 @@ export class RegisterService {
     return this.http.post(environment.adminURL + 'admin/login', result)
   }
 
+  loggedIn() {
+    if (this.data1.email) {
+      return true
+    } else {
+      return false
+    }
+  }
   addBook(result: any) {
     var reqHeader = new HttpHeaders({
       'Content-Type': 'application/json',

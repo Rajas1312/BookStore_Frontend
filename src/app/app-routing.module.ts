@@ -9,6 +9,7 @@ import { RegisterloginComponent } from './components/registerlogin/registerlogin
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 import { AddtocartComponent } from './components/addtocart/addtocart.component';
 import { OrderComponent } from './components/order/order.component';
+import { AuthguardService } from './service/authguard.service';
 
 
 
@@ -18,9 +19,9 @@ const routes: Routes = [
   { path: 'forgotpassword', component: ForgotpasswordComponent },
   { path: 'admin', component: AdminloginComponent },
   { path: 'admindashboard', component: AdmindashboardComponent },
-  { path: 'userdashboard', component: DashboardComponent },
-  { path: 'cart', component: AddtocartComponent },
-  { path: 'order', component: OrderComponent }
+  { path: 'userdashboard', component: DashboardComponent, },
+  { path: 'cart', component: AddtocartComponent, },
+  { path: 'order', component: OrderComponent, }
 
 ];
 
