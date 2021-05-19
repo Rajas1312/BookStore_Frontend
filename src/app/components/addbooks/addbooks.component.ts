@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RegisterService } from '../../service/user.service';
 import { Router } from '@angular/router';
 import { InteractionService } from '../../service/interaction.service';
+import { BookserviceService } from 'src/app/service/bookservice.service';
 
 @Component({
   selector: 'app-addbooks',
@@ -15,7 +16,7 @@ export class AddbooksComponent implements OnInit {
   addBook = new AddBook()
   data: any
   token: any
-  constructor(private dataservice: RegisterService,
+  constructor(private dataservice: BookserviceService,
     private router: Router, private service: InteractionService) { }
 
   ngOnInit(): void {

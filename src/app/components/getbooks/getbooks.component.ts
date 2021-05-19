@@ -2,6 +2,7 @@ import { UpdateBook } from './update.model';
 import { Component, OnInit } from '@angular/core';
 import { InteractionService } from '../../service/interaction.service';
 import { RegisterService } from '../../service/user.service';
+import { BookserviceService } from 'src/app/service/bookservice.service';
 
 @Component({
   selector: 'app-getbooks',
@@ -17,7 +18,7 @@ export class GetbooksComponent implements OnInit {
   openModal = false;
   openDeleteModal = false;
   updateData: any
-  constructor(private dataservice: RegisterService, private service: InteractionService) { }
+  constructor(private dataservice: BookserviceService, private service: InteractionService) { }
 
   ngOnInit(): void {
     this.submit()

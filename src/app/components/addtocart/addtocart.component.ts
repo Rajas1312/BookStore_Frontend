@@ -110,6 +110,7 @@ export class AddtocartComponent implements OnInit {
       this.router.navigate(['/order'])
     }, err => {
       console.log(err)
+      this.router.navigate(['/order'])
     })
   }
 

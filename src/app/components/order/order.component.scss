@@ -137,7 +137,26 @@
         justify-content: center;
     }
   }
+    .table{
+        width:50vw;
+    }
 
-  .table{
-      width: 50vw;
+    .icon{
+        size: 12;
+    }
+
+  @media screen and (max-width: 306px) {
+    .care{
+        margin: 0px 10px 0px 10px;
+    }
+    #confetti{
+        width: 50vw;
+    }
+    .table{
+        margin: 0px 10px 0px 10px;
+    }
+
+    .icon{
+        size: 10;
+    }
   }

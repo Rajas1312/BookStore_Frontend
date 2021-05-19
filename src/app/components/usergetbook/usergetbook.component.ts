@@ -1,5 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
-import { BookserviceService } from '../../service/bookservice.service';
+import { BookserviceService } from 'src/app/service/bookservice.service';
 import { RegisterService } from '../../service/user.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { RegisterService } from '../../service/user.service';
 })
 export class UsergetbookComponent implements OnInit {
 
-  constructor(private dataservice: RegisterService, private service: BookserviceService) { }
+  constructor(private service: BookserviceService) { }
   public data: any
   arr: any
   id: any
@@ -19,7 +20,7 @@ export class UsergetbookComponent implements OnInit {
   }
 
   submit() {
-    this.dataservice.getBooks().subscribe(res => {
+    this.service.getBooks().subscribe(res => {
       this.data = res
       this.arr = this.data.result
       this.arr = this.arr.reverse()
