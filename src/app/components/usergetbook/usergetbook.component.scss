@@ -58,6 +58,14 @@
     background-color: #8F2B2F !important;
 }
 
+.added, .btn-primary:active, .btn-primary:visited{
+    background-color: rgb(96, 96, 248) !important;
+}
+.added{
+    display: flex;
+    justify-content: center;
+}
+
 
 @media screen and (max-width: 600px) {
    .main{

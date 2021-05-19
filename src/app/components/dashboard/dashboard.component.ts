@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsergetbookComponent } from '../usergetbook/usergetbook.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,8 +10,17 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
   userClicked = false
+  userClickedSort = false
   constructor(private router: Router) { }
 
+  message: any;
+  highestClickArray = false;
+  lowestClickArray = false;
+
+
+  receiveMessage($event: string) {
+    this.message = $event
+  }
   ngOnInit(): void {
   }
 
@@ -21,9 +31,24 @@ export class DashboardComponent implements OnInit {
   userClick() {
     this.userClicked = !this.userClicked
   }
+  userClickSort() {
+    this.userClickedSort = !this.userClickedSort
+  }
 
   logoutUser() {
     this.router.navigate(['login'])
     localStorage.clear()
   }
+
+  highestArray() {
+    this.highestClickArray = true
+    this.lowestClickArray = false
+    console.log(this.highestClickArray)
+  }
+  lowestArray() {
+    this.lowestClickArray = true
+    this.highestClickArray = false
+    console.log(this.lowestClickArray)
+  }
+
 }

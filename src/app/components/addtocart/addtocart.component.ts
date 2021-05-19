@@ -11,9 +11,9 @@ import { Customer } from './customer.model';
 })
 export class AddtocartComponent implements OnInit {
 
+  quantity = 0
   openedBox = null;
   openedBox2 = null;
-  quantity = 1
   arr: any;
   data: any;
   length: any;

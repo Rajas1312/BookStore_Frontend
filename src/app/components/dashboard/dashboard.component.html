@@ -41,24 +41,36 @@
                 </div>
 
                 <div>
-                    <cds-icon shape="shopping-cart" size="24" (click)="cartClick()"></cds-icon>
+                    <cds-icon shape="shopping-cart" size="24" (click)="cartClick()" *ngIf="message!=true">
+                    </cds-icon>
+                    <cds-icon shape="shopping-cart" size="24" badge="success" (click)="cartClick()"
+                        *ngIf="message==true">
+                    </cds-icon>
                 </div>
             </div>
         </div>
     </header>
 </div>
-
-
-
-<div class="main-content-2" fxLayout="row" fxLayoutAlign="space-evenly">
+<div class="main-content-2" fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="30vw" fxLayoutGap.md="0vw"
+    fxLayoutGap.sm="0vw" fxLayoutGap.xs="2vw">
     <div class="book-txt">Books</div>
     <div class="add-books">
-        <div class="card">
-            sort by relevence
+        <div class="dropdown bottom-left open" (click)="userClickSort()">
+            <div style="cursor: pointer;" class="card">
+                sort by relevence
+                <cds-icon shape="angle" direction="down" *ngIf="userClickedSort!=true"></cds-icon>
+                <cds-icon shape="angle" direction="up" *ngIf="userClickedSort==true"></cds-icon>
+            </div>
+            <div class="dropdown-menu" *ngIf="userClickedSort==true">
+                <div class="dropdown-item" (click)="lowestArray()">Price:Low to High</div>
+                <div class="dropdown-item" (click)="highestArray()">Price:High to Low</div>
+            </div>
         </div>
+
     </div>
 </div>
 
 <div class="get-books">
-    <app-usergetbook></app-usergetbook>
+    <app-usergetbook (messageEvent)="receiveMessage($event)" [highestArray]="highestClickArray">
+    </app-usergetbook>
 </div>

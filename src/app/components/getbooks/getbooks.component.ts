@@ -1,7 +1,6 @@
 import { UpdateBook } from './update.model';
 import { Component, OnInit } from '@angular/core';
 import { InteractionService } from '../../service/interaction.service';
-import { RegisterService } from '../../service/user.service';
 import { BookserviceService } from 'src/app/service/bookservice.service';
 
 @Component({

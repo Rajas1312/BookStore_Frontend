@@ -61,15 +61,18 @@
                         <div class="price">Rs. {{array.product_id.price}}</div>
                         <div fxLayout="row">
                             <div>
-                                <cds-icon shape="minus-circle" size="16" (click)="decrementQuantity()">
+                                <cds-icon style="cursor: pointer;" shape="minus-circle" size="16"
+                                    (click)="decrementQuantity()">
                                 </cds-icon>
                             </div>
-                            <div class="quantity-box">{{array.product_id.quantity}}</div>
+                            <div class="quantity-box">{{array.product_id.quantity*1 + quantity}}</div>
                             <div>
-                                <cds-icon shape="plus-circle" size="16" (click)=" incrementQuantity() ">
+                                <cds-icon style="cursor: pointer;" shape="plus-circle" size="16"
+                                    (click)=" incrementQuantity() ">
                                 </cds-icon>
                             </div>
-                            <div class="remove" fxLayout="row" (click)="deleteFromCart(array._id)">Remove</div>
+                            <div style="cursor: pointer;" class="remove" fxLayout="row"
+                                (click)="deleteFromCart(array._id)">Remove</div>
                         </div>
                     </div>
                 </div>
