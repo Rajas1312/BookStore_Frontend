@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <header class="header header-1" fxLayout="row" fxLayoutAlign="space-evenly" fxFlex="100" fxFlex.md="100"
         fxFlex.sm="100" fxFlex.xs="100">
         <div class="header-content" fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100"
@@ -30,9 +30,14 @@
         <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100">
 
             <div class="content-3" fxLayout="row" fxLayoutGap="5px">
-                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100"
-                    fxFlex.xs="100">
-                    <cds-icon shape="user" size="24"></cds-icon>
+                <div class="dropdown bottom-right open" (click)="userClick()">
+                    <div>
+                        <cds-icon shape="user" size="24"></cds-icon>
+                    </div>
+                    <div class="dropdown-menu" *ngIf="userClicked==true">
+                        <h4 class="dropdown-header">Hello,Rajas</h4>
+                        <button class="btn btn-primary" (click)="logoutUser()">Logout</button>
+                    </div>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100"
                     fxFlex.xs="100">
@@ -48,6 +53,26 @@
 </div>
 
 <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.xs="center center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Emailus</th>
+                <th>Contactus</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>admin@bookstore@gmail.com</td>
+                <td>+918163798356</td>
+                <td>42, 14th Main, 15th Cross, Sector 4 ,opp to BDA complex, near Kumarakom restaurant, HSR Layout,
+                    Bangalore 560034</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+<div class="outer-table-box">
+
     <table class="table">
         <thead>
             <tr>

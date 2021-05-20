@@ -34,7 +34,9 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('usertoken', this.token)
       this.router.navigate(['userdashboard'])
     }, error => {
-      console.log(error)
+      this._snackBar.open('invalid cerdentials!', '', {
+        duration: 3000
+      })
     })
     return true
   }

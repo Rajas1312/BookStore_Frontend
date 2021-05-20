@@ -19,9 +19,9 @@ const routes: Routes = [
   { path: 'forgotpassword', component: ForgotpasswordComponent },
   { path: 'admin', component: AdminloginComponent },
   { path: 'admindashboard', component: AdmindashboardComponent },
-  { path: 'userdashboard', component: DashboardComponent, },
-  { path: 'cart', component: AddtocartComponent, },
-  { path: 'order', component: OrderComponent, }
+  { path: 'userdashboard', component: DashboardComponent, canActivate: [AuthguardService] },
+  { path: 'cart', component: AddtocartComponent, canActivate: [AuthguardService] },
+  { path: 'order', component: OrderComponent }
 
 ];
 

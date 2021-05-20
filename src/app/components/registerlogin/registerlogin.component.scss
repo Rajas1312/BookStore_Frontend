@@ -1,13 +1,7 @@
 .main-rectangle{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 75px;
+    padding-top: 70px;
     }
-    
     .rectangle{
-    top: 185px;
-    left: 320px;
     width: 624px;
     height: 391px;
     background: #F5F5F5 0% 0% no-repeat padding-box;
@@ -17,10 +11,9 @@
     
     .image-container{
         padding: 60px 60px 0px 60px;
+        width: 10vw;
     }
     .rectangle-form{
-    top: 166px;
-    left: 658px;
     width: 389px;
     height: 425px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -28,7 +21,6 @@
     border: 1px solid #E4E4E4;
     border-radius: 6px;
     opacity: 1;
-    margin-left: -250px;
     padding: 28px 69px 28px 69px;
     }
     
@@ -36,13 +28,102 @@
         display: flex;
         justify-content: center;
         padding-right: 270px;
-        margin-top: 20px;
         font-size: x-large;
     }
     
     .register-login-button{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     margin-bottom: 20px;
     }
+    .img{
+        height: 244px;
+        width: 244px;
+    }
+
+    @media screen and (max-width: 780px) {
+        .main-rectangle{
+            padding-top: 70px;
+            }
+            .rectangle{
+            width: 580px;
+            height: 347px;
+            background: #F5F5F5 0% 0% no-repeat padding-box;
+            border-radius: 21px;
+            opacity: 1;
+            }
+            
+            .image-container{
+                padding: 60px 60px 0px 60px;
+                width: 8vw;
+            }
+            .rectangle-form{
+            width: 345px;
+            height: 381px;
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 5px 15px #00000029;
+            border: 1px solid #E4E4E4;
+            border-radius: 6px;
+            opacity: 1;
+            padding: 20px 60px 20px 60px;
+            }
+            
+            .text{
+                display: flex;
+                justify-content: center;
+                padding-right: 270px;
+                font-size: large;
+            }
+            
+            .register-login-button{
+            margin-bottom: 20px;
+            }
+            .img{
+                height: 200px;
+                width: 200px;
+            }
+
+    }
+
+    @media screen and (max-width: 678px) {
+        .main-rectangle{
+            padding-top: 70px;
+            }
+            .rectangle{
+            width: 500px;
+            height: 300px;
+            background: #F5F5F5 0% 0% no-repeat padding-box;
+            border-radius: 21px;
+            opacity: 1;
+            }
+            
+            .image-container{
+                padding: 50px 50px 0px 50px;
+                width: 8vw;
+            }
+            .rectangle-form{
+            width: 300px;
+            height: 350px;
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 5px 15px #00000029;
+            border: 1px solid #E4E4E4;
+            border-radius: 6px;
+            opacity: 1;
+            padding: 20px 60px 20px 60px;
+            }
+            
+            .text{
+                display: flex;
+                justify-content: center;
+                padding-right: 200px;
+                font-size: large;
+            }
+            
+            .register-login-button{
+            margin-bottom: 20px;
+            }
+            .img{
+                height: 200px;
+                width: 200px;
+            }
+
+    }
+

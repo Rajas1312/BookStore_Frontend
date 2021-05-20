@@ -3,3 +3,11 @@
   background-color: #8F2B2F !important;
 }
 
+.form-size{
+  width: 20vw;
+}
+@media screen and (max-width: 780px) {
+  .form-size{
+    width: 25vw;
+  }
+}

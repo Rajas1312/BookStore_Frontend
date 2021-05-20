@@ -95,6 +95,15 @@
         width:100%;
         padding: 2vw;
     }
+    .outer-table-box{
+        width: calc( 100% - 40px );
+        overflow: auto;
+        padding: 0 20px;
+        box-sizing: border-box;
+        .table{
+            width: 700px;
+        }
+    }
     // #book{
     //     height: 50px;
     //     width: 25%;

@@ -19,6 +19,7 @@ export class AddtocartComponent implements OnInit {
   length: any;
   clickerror: any
   customerDetails = new Customer()
+  userClicked = false
 
 
   constructor(private service: BookserviceService, private router: Router, private fb: FormBuilder) { }
@@ -96,15 +97,16 @@ export class AddtocartComponent implements OnInit {
   }
 
   placeOrder() {
-    let orderArray = []
+    let orderArray = { orders: [{}] }
     for (let i = 0; i < this.arr.length; i++) {
-      orderArray.push({
+      orderArray.orders.push({
         product_id: this.arr[i].product_id._id,
         product_name: this.arr[i].product_id.bookName,
         product_quantity: this.arr[i].product_id.quantity,
         product_price: this.arr[i].product_id.price
       })
     }
+    orderArray == orderArray.orders.shift()
     this.service.placeOrder(orderArray).subscribe(res => {
       console.log(res)
       this.router.navigate(['/order'])
@@ -112,6 +114,15 @@ export class AddtocartComponent implements OnInit {
       console.log(err)
       this.router.navigate(['/order'])
     })
+  }
+
+  userClick() {
+    this.userClicked = !this.userClicked
+  }
+
+  logoutUser() {
+    this.router.navigate(['login'])
+    localStorage.clear()
   }
 
 }

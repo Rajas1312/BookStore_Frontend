@@ -1,8 +1,8 @@
-<div class="main-rectangle">
+<div class="main-rectangle" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="-250px" fxLayout.md="row"
+    fxLayoutGap="-200px" fxLayout.sm="row" fxLayout.xs="column">
     <div class="rectangle">
         <div class="image-container">
-            <img src="../assets/registration.png" alt="" width="244" height="244" style="border-radius: 150px;"
-                class="img">
+            <img src="../assets/registration.png" style="border-radius: 150px;" class="img">
         </div>
         <div class="text">
             <div>Online Book Shopping </div>
@@ -10,7 +10,8 @@
     </div>
 
     <div class="rectangle-form">
-        <div class="register-login-button">
+        <div class="register-login-button" fxlayout="row" fxLayoutAlign="space-between" fxLayoutAlign.md="space-between"
+            fxLayoutAlign.sm="space-between" fxLayoutAlign.xs="space-between">
             <div>
                 <button mat-button value="underline" [routerLink]="['/register']">Register</button>
             </div>

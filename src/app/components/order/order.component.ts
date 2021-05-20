@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderComponent implements OnInit {
 
-  constructor() { }
+  userClicked = false
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+  userClick() {
+    this.userClicked = !this.userClicked
+  }
 
+  logoutUser() {
+    this.router.navigate(['login'])
+    localStorage.clear()
+  }
 }
