@@ -9,22 +9,10 @@
             <div>Bookstore</div>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100">
-            <div class="header-content-1">
-                <div class="searchbar-container">
-                    <div class="icons-search-wrapper"
-                        style="display:flex;flex-direction: row;margin-bottom: 25px;margin-left: 25px;">
-                        <div style="display:flex;align-items: flex-end;">
-                            <div>
-                                <cds-icon shape="search" size="16"></cds-icon>
-                            </div>
-                        </div>
-                        <div>
-                            <input clrInput type="text" class="searchbar-input" placeholder="Search..."
-                                style="width:36vw">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <cds-search control-width="stretch" style="color: white;">
+                <label></label>
+                <input type="text" placeholder="Search" />
+            </cds-search>
         </div>
 
         <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100">

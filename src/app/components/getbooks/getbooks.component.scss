@@ -1,6 +1,4 @@
-.main{
-    margin-left: 13vw;
-}
+
 .card{
     width: 240px;
     margin-right: 20px;
@@ -58,18 +56,15 @@
     background-color: #8F2B2F !important;
 }
 
-@media screen and (max-width: 600px) {
-   .main{
-       display: flex;
-       flex-direction: column;
-       margin-left: 8vw;
-   }
+@media screen and (max-width: 361px) {
+
    .dilouge-container{
        width: 300px;
    }
    .card{
     width: 150px;
     margin-right: 15px;
+    margin-left: 15px;
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;

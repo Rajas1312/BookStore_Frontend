@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import '@cds/core/search/register.js';
 
 @Component({
   selector: 'app-order',

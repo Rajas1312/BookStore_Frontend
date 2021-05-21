@@ -6,25 +6,13 @@
             <div class="icon">
                 <cds-icon shape="book" size="24"></cds-icon>
             </div>
-            <div>Bookstore</div>
+            <div class="bookstore-txt">Bookstore</div>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100">
-            <div class="header-content-1">
-                <div class="searchbar-container">
-                    <div class="icons-search-wrapper"
-                        style="display:flex;flex-direction: row;margin-bottom: 25px;margin-left: 25px;">
-                        <div style="display:flex;align-items: flex-end;">
-                            <div>
-                                <cds-icon shape="search" size="16"></cds-icon>
-                            </div>
-                        </div>
-                        <div>
-                            <input clrInput type="text" class="searchbar-input" placeholder="Search..."
-                                style="width:36vw">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <cds-search control-width="stretch">
+                <label></label>
+                <input type="text" placeholder="Search" />
+            </cds-search>
         </div>
 
         <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100">
@@ -51,8 +39,8 @@
         </div>
     </header>
 </div>
-<div class="main-content-2" fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="30vw" fxLayoutGap.md="0vw"
-    fxLayoutGap.sm="0vw" fxLayoutGap.xs="2vw">
+<div class="main-content-2" fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="30vw" fxLayoutGap.md="25vw"
+    fxLayoutGap.sm="15vw" fxLayoutGap.xs="-5vw" fxLayoutAlign.xs="center center">
     <div class="book-txt">Books</div>
     <div class="add-books">
         <div class="dropdown bottom-left open" (click)="userClickSort()">
