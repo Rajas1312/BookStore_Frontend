@@ -1,22 +1,21 @@
 <div class="form-container">
     <div>
-        <form clrForm clrLayout="vertical">
+        <form class="form-size1" clrForm clrLayout="vertical">
             <clr-input-container>
                 <label>Email</label>
-                <input class="form-size" clrInput type="text" name="email" [(ngModel)]="login.email"
+                <input clrInput type="text" name="email" [(ngModel)]="login.email"
                     pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required />
                 <clr-control-error>Invalid Email </clr-control-error>
             </clr-input-container>
 
             <clr-input-container>
                 <label>Password</label>
-                <input class="form-size" clrInput type="text" name="password" type="password"
-                    [(ngModel)]="login.password" required />
+                <input clrInput type="text" name="password" type="password" [(ngModel)]="login.password" required />
                 <clr-control-error>Invalid Password </clr-control-error>
             </clr-input-container>
         </form>
     </div>
-    <form (ngSubmit)="submit()">
+    <form (ngSubmit)="submit()" class="form-size1">
         <div class="button">
             <button class="btn btn-primary form-size">Login</button>
         </div>

@@ -39,13 +39,13 @@
         width: 244px;
     }
 
-    @media screen and (max-width: 780px) {
+    @media screen and (max-width: 769px) {
         .main-rectangle{
             padding-top: 70px;
             }
             .rectangle{
-            width: 580px;
-            height: 347px;
+            width: 450px;
+            height: 350px;
             background: #F5F5F5 0% 0% no-repeat padding-box;
             border-radius: 21px;
             opacity: 1;
@@ -69,7 +69,7 @@
             .text{
                 display: flex;
                 justify-content: center;
-                padding-right: 270px;
+                padding-right: 150px;
                 font-size: large;
             }
             
@@ -83,25 +83,25 @@
 
     }
 
-    @media screen and (max-width: 678px) {
+    @media screen and (max-width: 541px) {
         .main-rectangle{
             padding-top: 70px;
             }
             .rectangle{
-            width: 500px;
-            height: 300px;
+            width: 300px;
+            height: 345px;
             background: #F5F5F5 0% 0% no-repeat padding-box;
             border-radius: 21px;
             opacity: 1;
             }
             
             .image-container{
-                padding: 50px 50px 0px 50px;
+                padding: 50px 60px 0px 80px;
                 width: 8vw;
             }
             .rectangle-form{
             width: 300px;
-            height: 350px;
+            height: 381px;
             background: #FFFFFF 0% 0% no-repeat padding-box;
             box-shadow: 0px 5px 15px #00000029;
             border: 1px solid #E4E4E4;
@@ -113,17 +113,106 @@
             .text{
                 display: flex;
                 justify-content: center;
-                padding-right: 200px;
+                margin-top: 10px;
+                padding-right: 0px;
                 font-size: large;
             }
             
             .register-login-button{
             margin-bottom: 20px;
             }
-            .img{
-                height: 200px;
-                width: 200px;
-            }
-
+        .img{
+            width: 150px;
+            height: 150px;
+        }
     }
 
+    @media screen and (max-width: 415px) {
+
+        .main-rectangle{
+            padding-top: 70px;
+            }
+            .rectangle{
+            width: 300px;
+            height: 347px;
+            background: #F5F5F5 0% 0% no-repeat padding-box;
+            border-radius: 21px;
+            opacity: 1;
+            }
+            
+            .image-container{
+                padding: 50px 60px 0px 80px;
+                width: 8vw;
+            }
+            .rectangle-form{
+            width: 300px;
+            height: 381px;
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 5px 15px #00000029;
+            border: 1px solid #E4E4E4;
+            border-radius: 6px;
+            opacity: 1;
+            padding: 20px 60px 20px 60px;
+            }
+            
+            .text{
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+                padding-right: 0px;
+                font-size: large;
+            }
+            
+            .register-login-button{
+            margin-bottom: 20px;
+            }
+        .img{
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    @media screen and (max-width: 361px) {
+
+        .main-rectangle{
+            padding-top: 70px;
+            }
+            .rectangle{
+            width: 300px;
+            height: 345px;
+            background: #F5F5F5 0% 0% no-repeat padding-box;
+            border-radius: 21px;
+            opacity: 1;
+            }
+            
+            .image-container{
+                padding: 50px 60px 0px 80px;
+                width: 8vw;
+            }
+            .rectangle-form{
+            width: 300px;
+            height: 381px;
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 5px 15px #00000029;
+            border: 1px solid #E4E4E4;
+            border-radius: 6px;
+            opacity: 1;
+            padding: 20px 60px 20px 60px;
+            }
+            
+            .text{
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+                padding-right: 0px;
+                font-size: large;
+            }
+            
+            .register-login-button{
+            margin-bottom: 20px;
+            }
+        .img{
+            width: 150px;
+            height: 150px;
+        }
+    }

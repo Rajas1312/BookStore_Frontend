@@ -4,10 +4,34 @@
 }
 
 .form-size{
-  width: 20vw;
+  width: 75%;
+  
 }
-@media screen and (max-width: 780px) {
+.form-size1{
+  padding-left: 20px;
+}
+@media screen and (max-width: 769px) {
   .form-size{
-    width: 25vw;
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 541px) {
+  .form-size{
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .form-size{
+    width: 95%;
+  }
+  
+}
+
+@media screen and (max-width: 361px) {
+
+  .form-size{
+    width: 95%;
   }
 }
