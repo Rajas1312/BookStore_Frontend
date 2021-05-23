@@ -24,7 +24,7 @@
                     </div>
                     <div class="dropdown-menu" *ngIf="userClicked==true">
                         <h4 class="dropdown-header">Hello,Rajas</h4>
-                        <button class="btn btn-primary" (click)="logoutUser()">Logout</button>
+                        <div class="dropdown-item" (click)="logoutUser()">Logout</div>
                     </div>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100"

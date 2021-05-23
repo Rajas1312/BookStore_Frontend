@@ -1,6 +1,6 @@
 export class Register {
-    firstName: any
-    lastName: any
+    fullName: any
     email: any
     password: any
+    phone: any
 }

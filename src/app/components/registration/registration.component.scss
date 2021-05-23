@@ -1,0 +1,66 @@
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  font: normal normal normal 12px/15px Lato;
+  margin-right: 0%;
+  background-color: #8F2B2F !important;
+}
+
+.form-box{
+  border: 1px solid #e0dddd;
+  padding: 0.5vw;
+  width: 100%;
+  border-radius: 2px;
+  border-color: #8F2B2F
+}
+.form-box1{
+  border: 1px solid #e0dddd;
+  padding: 0.5vw;
+  width: 100%;
+  border-radius: 2px;
+  border-color: #8F2B2F
+}
+.address-label{
+  text-align: left;
+  font: normal normal bold 10px/14px Roboto;
+  letter-spacing: 0px;
+  color: #0A0102;
+  opacity: 1;
+}
+  @media screen and (max-width: 769px) {
+    .form-size{
+      width: 75%;
+    }
+  }
+  
+  @media screen and (max-width: 541px) {
+    .form-size{
+      width: 95%;
+    }
+  }
+  
+  @media screen and (max-width: 415px) {
+    .form-size{
+      width: 95%;
+    }
+    
+  }
+  
+  @media screen and (max-width: 361px) {
+  
+    .form-box{
+      border: 1px solid #e0dddd;
+      padding: 0.5vw;
+      width: 100%;
+      border-radius: 2px;
+      border-color: #8F2B2F
+    }
+    .form-box1{
+      border: 1px solid #e0dddd;
+      padding: 0.5vw;
+      width: 100%;
+      border-radius: 2px;
+      border-color: #8F2B2F
+    }
+    .order-button1{
+      width: 100%;
+    }
+  }

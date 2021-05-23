@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminloginComponent },
   { path: 'admindashboard', component: AdmindashboardComponent },
   { path: 'userdashboard', component: DashboardComponent, },
-  { path: 'cart', component: AddtocartComponent, canActivate: [AuthguardService] },
+  { path: 'cart', component: AddtocartComponent, },
   { path: 'order', component: OrderComponent }
 
 ];

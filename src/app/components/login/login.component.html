@@ -1,4 +1,4 @@
-<div class="form-container">
+<!-- <div class="form-container">
     <div>
         <form class="form-size1" clrForm clrLayout="vertical">
             <clr-input-container>
@@ -20,4 +20,35 @@
             <button class="btn btn-primary form-size">Login</button>
         </div>
     </form>
+</div> -->
+
+<div class="main-customer" fxLayout="column" fxLayoutAlign="space-between" fxLayout.xs="column">
+
+    <form>
+        <div fxLayout="column" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw" fxLayoutGap.xs="2vw">
+            <div fxLayout="column" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw" fxFlex.md="100"
+                fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100" fxLayoutAlign="flex-start"
+                fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayout.xs="column" fxLayout.sm="column"
+                fxLayoutAlign.xs="flex-start" fxLayoutGap.xs="2vw">
+                <div fxLayout="column">
+                    <label class="address-label">Email</label>
+                    <input id="name" class="form-box" placeholder="Email" type="email" name="email"
+                        [(ngModel)]="login.email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+
+                </div>
+                <div fxLayout="column">
+                    <label class="address-label">Password</label>
+                    <input class="form-box" placeholder="Password" name="password" type="password"
+                        [(ngModel)]="login.password" required>
+                    <div fxLayout="row" fxLayoutAlign="flex-end">
+                        <div>forgot password?</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="order-button1" fxLayout="column" fxLayoutAlign="flex-end">
+        <button type="button" class="btn btn-primary" (click)="submit()">Login</button>
+    </div>
 </div>

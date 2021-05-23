@@ -11,8 +11,10 @@ import { RegisterService } from '../../service/user.service';
 export class UsergetbookComponent implements OnInit, OnChanges {
 
   message: any;
+  cartItem = 1
   @Input() highestArray = false
   @Output() messageEvent = new EventEmitter<any>();
+  @Output() cartItemEvent = new EventEmitter<any>();
 
   constructor(private service: BookserviceService) { }
 
@@ -47,7 +49,9 @@ export class UsergetbookComponent implements OnInit, OnChanges {
   adToBag(data: any) {
     this.id = data
     this.isBag = true
+    this.cartItem = this.cartItem++
     this.messageEvent.emit(this.message = true)
+    this.cartItemEvent.emit(this.cartItem++)
     localStorage.setItem('addToBag', this.id)
     this.service.addToBag().subscribe(res => {
       console.log(res)

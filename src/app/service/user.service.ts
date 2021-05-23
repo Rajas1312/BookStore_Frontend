@@ -11,8 +11,8 @@ export class RegisterService {
 
   constructor(private http: HttpClient) { }
 
-  registerUser(result: any) {
-    return this.http.post(environment.baseURL + 'user', result)
+  registerUser(data: any) {
+    return this.http.post(environment.adminURL + 'registration', data)
   }
   loginUser(data: any) {
     this.data1 = data

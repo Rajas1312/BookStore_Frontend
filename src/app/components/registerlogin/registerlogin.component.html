@@ -1,5 +1,5 @@
-<div class="main-rectangle" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="-250px" fxLayout.md="row"
-    fxLayoutGap="-200px" fxLayout.sm="row" fxLayout.xs="column" fxLayoutGap="-100px">
+<div class="main-rectangle" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="-290px" fxLayoutGap.md="-150px"
+    fxLayoutGap.sm="-150px" fxLayout.xs="column" fxLayoutGap.xs="0px">
     <div class="rectangle">
         <div class="image-container">
             <img src="../assets/registration.png" style="border-radius: 150px;" class="img">
@@ -13,10 +13,10 @@
         <div class="register-login-button" fxLayout="row" fxLayoutGap="55px" fxLayoutAlign.md="space-between"
             fxLayoutAlign.sm="space-between" fxLayoutAlign.xs="space-between">
             <div>
-                <button mat-button value="underline" [routerLink]="['/register']">Register</button>
+                <button class="btn btn-primary" [routerLink]="['/register']" routerLinkActive="active">SignUp</button>
             </div>
             <div>
-                <button mat-button value="underline" [routerLink]="['/login']">login</button>
+                <button class="btn btn-primary" [routerLink]="['/login']">login</button>
             </div>
         </div>
         <router-outlet></router-outlet>

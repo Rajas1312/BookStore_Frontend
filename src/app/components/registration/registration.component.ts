@@ -11,10 +11,8 @@ import { Register } from './registration.model';
 export class RegistrationComponent implements OnInit {
 
   register = new Register();
-  message: any
   data: any
-  success: any
-  error: any
+
 
   constructor(private dataservice: RegisterService,
     private _snackBar: MatSnackBar) { }
@@ -23,16 +21,14 @@ export class RegistrationComponent implements OnInit {
   }
 
   submit() {
+    console.log(this.register)
     this.dataservice.registerUser(this.register).subscribe(res => {
       console.log(res)
-      this.data = res
-      this.message = this.data.message
-      this._snackBar.open(this.message, '', {
+      this._snackBar.open('successfull', '', {
         duration: 3000
       })
     }, err => {
-      this.error = err
-      this.success = this.error.message
+      console.log(err)
       this._snackBar.open("Invalid Credentials", '', {
         duration: 3000
       })

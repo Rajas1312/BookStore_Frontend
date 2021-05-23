@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterloginComponent implements OnInit {
 
+  registerActive = false
+  loginActive = false
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  registerClick() {
+    this.registerActive = true;
+    this.loginActive = false
+  }
+  loginClick() {
+    this.registerActive = false;
+    this.loginActive = true
+  }
 }
