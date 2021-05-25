@@ -95,7 +95,9 @@
     }
 }
 .bookstore-txt{
-    display:contents
+    display:contents;
+    cursor: pointer;
+    
 }
 
 @media screen and (max-width: 769px) {

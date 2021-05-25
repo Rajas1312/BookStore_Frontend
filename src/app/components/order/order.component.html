@@ -6,7 +6,7 @@
             <div class="icon">
                 <cds-icon shape="book" size="24"></cds-icon>
             </div>
-            <div class="bookstore-txt">Bookstore</div>
+            <div class="bookstore-txt" (click)="dashboard()">Bookstore</div>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100">
             <cds-search control-width="stretch" style="color: white;">
@@ -79,3 +79,5 @@
         </tbody>
     </table>
 </div>
+
+<app-footer></app-footer>

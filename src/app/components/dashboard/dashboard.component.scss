@@ -9,10 +9,13 @@
 .header{
     font: normal normal normal 20px/26px Roboto;
     opacity: 1;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
 }
 
 .main-content-2{
-    margin-top: 20px;
+    margin-top: 80px;
     .book-txt{
         font: normal normal normal 25px/33px Roboto;
         color: #0A0102;
@@ -29,6 +32,15 @@
     }
 }
 
+.badge {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 15px;
+    margin-right: 2px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+  }
 @media screen and (max-width: 361px) {
     .book-txt{
         margin-left: 2vw;

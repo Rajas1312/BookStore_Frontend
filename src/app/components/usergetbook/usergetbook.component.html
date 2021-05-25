@@ -1,5 +1,5 @@
 <div class="main" fxLayout="row wrap" fxLayout="center center">
-    <div class="card " *ngFor="let array of arr" fxFlex="20" fxFlex.md="27" fxFlex.sm="40" fxFlex.xs="83">
+    <div class="card " *ngFor="let array of arr;let i=index" fxFlex="20" fxFlex.md="27" fxFlex.sm="40" fxFlex.xs="83">
         <div class="card-img" fxLayout="row" fxLayoutAlign="center">
             <img id="book" src="../../assets/Image 11.png">
         </div>
@@ -13,9 +13,10 @@
                 <div style="font-size: 12px;">Rs({{array.discountPrice}})</div>
             </div>
             <div fxLayout="row" fxLayoutAlign="space-between">
-                <button class=" added btn btn-primary" *ngIf="id==array._id">Added to bag</button>
-                <button class=" btn btn-primary" *ngIf="id!=array._id" (click)="adToBag(array._id)">Add to Bag</button>
-                <button class="btn btn-outline" *ngIf="id!=array._id">Wish List</button>
+                <button class=" added btn btn-primary" *ngIf="array.isAdded">Added to bag</button>
+                <button class=" btn btn-primary" *ngIf="!array.isAdded" (click)="adToBag(array._id,i)">Add to
+                    Bag</button>
+                <button class="btn btn-outline" *ngIf="!array.isAdded">Wish List</button>
             </div>
         </div>
     </div>

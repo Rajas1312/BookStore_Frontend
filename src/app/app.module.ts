@@ -43,6 +43,7 @@ import { UsergetbookComponent } from './components/usergetbook/usergetbook.compo
 import { AddtocartComponent } from './components/addtocart/addtocart.component';
 import { OrderComponent } from './components/order/order.component';
 import { AuthguardService } from './service/authguard.service';
+import { FooterComponent } from './footer/footer.component';
 ClarityIcons.addIcons(bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shoppingCartIcon, plusCircleIcon, minusCircleIcon, angleIcon);
 
 @NgModule({
@@ -60,6 +61,7 @@ ClarityIcons.addIcons(bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shopping
     UsergetbookComponent,
     AddtocartComponent,
     OrderComponent,
+    FooterComponent,
 
 
   ],

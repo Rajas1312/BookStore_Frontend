@@ -209,6 +209,7 @@
             Order Details
         </div>
         <div class="cart-box my-cart" *ngIf="openedBox2==1">
+            <div class="order-summery">Order Sumarrey</div>
             <div fxLayout="row" fxLayoutAlign="space-between" fxLayout.xs="column" *ngFor="let array of arr;index as i"
                 style="margin-bottom:1vw;">
                 <div class="order-books" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap=10px
@@ -230,3 +231,4 @@
     </div>
     <div></div>
 </div>
+<app-footer></app-footer>

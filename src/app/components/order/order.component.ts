@@ -22,4 +22,7 @@ export class OrderComponent implements OnInit {
     this.router.navigate(['login'])
     localStorage.clear()
   }
+  dashboard() {
+    this.router.navigate(['userdashboard'])
+  }
 }

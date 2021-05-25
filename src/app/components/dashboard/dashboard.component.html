@@ -29,12 +29,12 @@
                 </div>
 
                 <div>
-                    <cds-icon shape="shopping-cart" size="24" (click)="cartClick()" *ngIf="message!=true">
+                    <cds-icon shape="shopping-cart" size="24" (click)="cartClick()">
                     </cds-icon>
-                    <cds-icon shape="shopping-cart" size="24" badge="success" (click)="cartClick()"
+                    <!-- <cds-icon shape="shopping-cart" size="24" badge="success" (click)="cartClick()"
                         *ngIf="message==true">
-                    </cds-icon>
-                    <div *ngIf="message==true">({{cartItem}})</div>
+                    </cds-icon> -->
+                    <span class='badge badge-warning' id='lblCartCount' *ngIf="message==true">{{cartItem}}</span>
                 </div>
             </div>
         </div>
@@ -66,3 +66,5 @@
 <!-- <div *ngIf="check!=true">
     <div *ngFor="let array of arr">{{array.bookName}}</div>
 </div> -->
+
+<app-footer></app-footer>

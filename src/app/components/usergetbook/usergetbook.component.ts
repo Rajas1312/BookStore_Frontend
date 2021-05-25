@@ -46,9 +46,10 @@ export class UsergetbookComponent implements OnInit, OnChanges {
     })
   }
 
-  adToBag(data: any) {
+  adToBag(data: any, index: any) {
     this.id = data
     this.isBag = true
+    this.arr[index].isAdded = true
     this.cartItem = this.cartItem++
     this.messageEvent.emit(this.message = true)
     this.cartItemEvent.emit(this.cartItem++)
