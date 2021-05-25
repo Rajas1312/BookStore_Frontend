@@ -125,4 +125,8 @@ export class AddtocartComponent implements OnInit {
     localStorage.clear()
   }
 
+  dashboard() {
+    this.router.navigate(['userdashboard'])
+  }
+
 }

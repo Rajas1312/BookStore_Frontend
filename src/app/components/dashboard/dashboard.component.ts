@@ -59,6 +59,8 @@ export class DashboardComponent implements OnInit {
     this.highestClickArray = false
     console.log(this.lowestClickArray)
   }
+
+
   // submit() {
   //   this.check = false
   //   this.service.getBooks().subscribe(res => {
