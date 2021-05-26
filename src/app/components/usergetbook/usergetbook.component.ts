@@ -12,6 +12,7 @@ export class UsergetbookComponent implements OnInit, OnChanges {
 
   message: any;
   cartItem = 1
+  wishlistItem = 1
   @Input() highestArray = false
   @Output() messageEvent = new EventEmitter<any>();
   @Output() cartItemEvent = new EventEmitter<any>();
@@ -22,6 +23,7 @@ export class UsergetbookComponent implements OnInit, OnChanges {
   arr: any
   id: any
   isBag = false
+  isWishlist = false
 
   ngOnInit(): void {
   }
@@ -50,11 +52,28 @@ export class UsergetbookComponent implements OnInit, OnChanges {
     this.id = data
     this.isBag = true
     this.arr[index].isAdded = true
+    this.arr[index].isWish = false
     this.cartItem = this.cartItem++
     this.messageEvent.emit(this.message = true)
     this.cartItemEvent.emit(this.cartItem++)
     localStorage.setItem('addToBag', this.id)
     this.service.addToBag().subscribe(res => {
+      console.log(res)
+    }, err => {
+      console.log(err)
+    })
+  }
+
+  addToWishlist(data: any, index: any) {
+    this.id = data
+    this.isBag = true
+    this.arr[index].isWish = true
+    this.arr[index].isAdded = false
+    // this.cartItem = this.cartItem++
+    // this.messageEvent.emit(this.message = true)
+    // this.cartItemEvent.emit(this.cartItem++)
+    localStorage.setItem('addToWishlist', this.id)
+    this.service.addToWishlist().subscribe(res => {
       console.log(res)
     }, err => {
       console.log(err)

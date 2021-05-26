@@ -48,6 +48,28 @@ export class BookserviceService {
     });
     return this.http.post(environment.adminURL + 'add_cart_item/' + localStorage.getItem('addToBag'), '', { headers: reqHeader })
   }
+
+  addToWishlist() {
+    var reqHeader = new HttpHeaders({
+      // 'Content-Type': 'application/json',
+      'x-access-token': '' + localStorage.getItem('usertoken')
+    });
+    return this.http.post(environment.adminURL + 'add_wish_list/' + localStorage.getItem('addToWishlist'), '', { headers: reqHeader })
+  }
+  getWishlist() {
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': '' + localStorage.getItem('usertoken')
+    });
+    return this.http.get(environment.adminURL + 'get_wishlist_items/', { headers: reqHeader })
+  }
+  deleteWish() {
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': '' + localStorage.getItem('usertoken')
+    });
+    return this.http.delete(environment.adminURL + 'remove_wishlist_item/' + localStorage.getItem('deleteWish'), { headers: reqHeader })
+  }
   getCart() {
     var reqHeader = new HttpHeaders({
       'Content-Type': 'application/json',

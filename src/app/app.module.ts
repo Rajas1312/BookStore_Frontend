@@ -36,7 +36,7 @@ import { AdmindashboardComponent } from './components/admindashboard/admindashbo
 import { FlexLayoutModule } from '@angular/flex-layout';
 import '@cds/core/icon/register.js';
 import '@cds/core/search/register.js';
-import { ClarityIcons, bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shoppingCartIcon, plusCircleIcon, minusCircleIcon, angleIcon } from '@cds/core/icon';
+import { ClarityIcons, bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shoppingCartIcon, plusCircleIcon, minusCircleIcon, angleIcon, trashIcon } from '@cds/core/icon';
 import { AddbooksComponent } from './components/addbooks/addbooks.component';
 import { GetbooksComponent } from './components/getbooks/getbooks.component';
 import { UsergetbookComponent } from './components/usergetbook/usergetbook.component';
@@ -44,7 +44,9 @@ import { AddtocartComponent } from './components/addtocart/addtocart.component';
 import { OrderComponent } from './components/order/order.component';
 import { AuthguardService } from './service/authguard.service';
 import { FooterComponent } from './footer/footer.component';
-ClarityIcons.addIcons(bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shoppingCartIcon, plusCircleIcon, minusCircleIcon, angleIcon);
+import { WishlistComponent } from './wishlist/wishlist.component';
+import { HeaderComponent } from './header/header.component';
+ClarityIcons.addIcons(bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shoppingCartIcon, plusCircleIcon, minusCircleIcon, angleIcon, trashIcon);
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ ClarityIcons.addIcons(bookIcon, mapIcon, bugIcon, searchIcon, userIcon, shopping
     AddtocartComponent,
     OrderComponent,
     FooterComponent,
+    WishlistComponent,
+    HeaderComponent,
 
 
   ],

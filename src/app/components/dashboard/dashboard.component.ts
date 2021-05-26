@@ -12,18 +12,28 @@ export class DashboardComponent implements OnInit {
 
   userClicked = false
   userClickedSort = false
-  constructor(private router: Router, private service: BookserviceService) { }
-
+  data1: any
   message: any;
   cartItem: any
   highestClickArray = false;
   lowestClickArray = false;
   check = true
-  data: any
-  data1: any
   bookName: any
+  data: any
   arr: any
-  arr1 = []
+  filteredArr: any
+
+  private _search: string = ''
+  get searchTerm(): string {
+    return this._search
+  }
+  set searchTerm(value: string) {
+    this._search = value
+    this.filteredArr = this.filterEmployee(value)
+  }
+  constructor(private router: Router, private service: BookserviceService) { }
+
+
   receiveMessage($event: string) {
     this.message = $event
   }
@@ -49,6 +59,10 @@ export class DashboardComponent implements OnInit {
     localStorage.clear()
   }
 
+  wishlist() {
+    this.router.navigate(['wishlist'])
+  }
+
   highestArray() {
     this.highestClickArray = true
     this.lowestClickArray = false
@@ -60,30 +74,23 @@ export class DashboardComponent implements OnInit {
     console.log(this.lowestClickArray)
   }
 
-
   // submit() {
-  //   this.check = false
   //   this.service.getBooks().subscribe(res => {
   //     this.data = res
   //     this.arr = this.data.result
-  //     this.arr1 = this.arr
-  //     this.arr = this.arr1.filter(res => {
-  //       this.arr = res;
-  //       this.data1 = this.data1.bookName.toLocaleLowerCase().match(this.bookName.toLocaleLowerCase())
-  //       this.arr = this.data1
-  //     })
-  //     console.log(this.arr)
-  //   })
-  // if (this.bookName == "") {
-  //   this.check = false
-  // } else {
-  //   this.check = true;
-  //   this.arr = this.arr.filter(res => {
-  //     return res.bookName.toLocaleLowerCase().match()
+
   //   })
   // }
-
-  // }
-
+  filterEmployee(value) {
+    return this.service.getBooks().subscribe(res => {
+      this.data = res
+      this.arr = this.data.result
+      return this.arr.filter(emp => {
+        // emp.bookName.toLowerCase().indexOf(value.toLowerCase()) !== -1
+        console.log(emp.bookName)
+      })
+    })
+  }
 
 }
+

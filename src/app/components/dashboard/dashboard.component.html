@@ -11,7 +11,7 @@
         <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100">
             <cds-search control-width="stretch">
                 <label></label>
-                <input type="text" placeholder="Search" name="bookName" />
+                <input type="text" placeholder="Search" name="bookName" [(ngModel)]="searchTerm" />
             </cds-search>
         </div>
 
@@ -24,6 +24,7 @@
                     </div>
                     <div class="dropdown-menu" *ngIf="userClicked==true">
                         <h4 class="dropdown-header">Hello,Rajas</h4>
+                        <div class="dropdown-item " (click)="wishlist()">Wishlist</div>
                         <div class="dropdown-item " (click)="logoutUser()">Logout</div>
                     </div>
                 </div>
@@ -63,8 +64,8 @@
         [highestArray]="highestClickArray">
     </app-usergetbook>
 </div>
-<!-- <div *ngIf="check!=true">
-    <div *ngFor="let array of arr">{{array.bookName}}</div>
-</div> -->
+<div>
+    <div *ngFor="let array of filteredArr">{{array.bookName}}</div>
+</div>
 
 <app-footer></app-footer>

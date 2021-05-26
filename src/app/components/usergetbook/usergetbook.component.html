@@ -13,10 +13,14 @@
                 <div style="font-size: 12px;">Rs({{array.discountPrice}})</div>
             </div>
             <div fxLayout="row" fxLayoutAlign="space-between">
-                <button class=" added btn btn-primary" *ngIf="array.isAdded">Added to bag</button>
-                <button class=" btn btn-primary" *ngIf="!array.isAdded" (click)="adToBag(array._id,i)">Add to
+                <button class=" added btn btn-primary" *ngIf="array.isAdded && !array.isWish">Added to bag</button>
+                <button class=" btn btn-primary" *ngIf="!array.isAdded && !array.isWish"
+                    (click)="adToBag(array._id,i)">Add to
                     Bag</button>
-                <button class="btn btn-outline" *ngIf="!array.isAdded">Wish List</button>
+                <button class="btn btn-outline" *ngIf="!array.isAdded && !array.isWish "
+                    (click)="addToWishlist(array._id,i)">Wish
+                    List</button>
+                <button class=" added btn btn-primary" *ngIf="array.isWish && !array.isAdded">Added to Wishlist</button>
             </div>
         </div>
     </div>

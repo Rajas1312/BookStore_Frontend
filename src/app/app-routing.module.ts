@@ -10,6 +10,7 @@ import { AdmindashboardComponent } from './components/admindashboard/admindashbo
 import { AddtocartComponent } from './components/addtocart/addtocart.component';
 import { OrderComponent } from './components/order/order.component';
 import { AuthguardService } from './service/authguard.service';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 
 
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'admindashboard', component: AdmindashboardComponent },
   { path: 'userdashboard', component: DashboardComponent, },
   { path: 'cart', component: AddtocartComponent, },
-  { path: 'order', component: OrderComponent }
+  { path: 'order', component: OrderComponent },
+  { path: 'wishlist', component: WishlistComponent },
 
 ];
 

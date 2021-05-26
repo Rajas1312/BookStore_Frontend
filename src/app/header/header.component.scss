@@ -1,0 +1,110 @@
+.main-box{
+    margin-top: 8vw;
+}
+.my-cart{
+
+    font: normal normal medium 18px/22px Lato;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+    font-size: medium;
+    margin-bottom: 1vw;
+}
+
+.book-name{
+    text-align: left;
+    font: normal normal normal 14px/17px Lato;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 100%;
+    font-size: 14px;
+}
+.author{
+    text-align: left;
+    font: normal normal normal 10px/12px Lato;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1;
+}
+.price{
+    text-align: left;
+    font: normal normal bold 15px/18px Lato;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+.quantity-box{
+    border:1px solid #707070;
+    padding: -0vw 1vw -0vw 1vw;
+}
+.remove{
+    margin-left: 2vw;
+}
+
+.cart-box{
+    border: 1px solid #707070;
+    width:50vw;
+    padding: 2vw;
+    
+}
+
+.header-1{
+    background-color: #8F2B2F;
+    }
+  
+.header{
+    font: normal normal normal 20px/26px Roboto;
+    opacity: 1;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+.main-content-2{
+    margin-top: 20px;
+    .book-txt{
+        font: normal normal normal 25px/33px Roboto;
+        color: #0A0102;
+        opacity: 1;
+        margin-right: 30vw; 
+    }
+    .add-books{
+        margin-left: 15vw;
+        .card{
+            margin-top: 0%;
+            padding-right: 2px;
+            padding-left: 2px;
+        }
+    }
+}
+.remove{
+    text-align: left;
+    font: normal normal normal 12px/15px Lato;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+    font-size: 12px;
+}
+
+.form-box{
+    border: 1px solid #707070;
+    padding: 0.5vw;
+    width: 17vw;
+}
+
+.outer-table-box{
+    .table{
+        margin: 0px 0px 0px 25%;
+    }
+}
+.bookstore-txt{
+    display:contents;
+    cursor: pointer;
+    
+}
+@media screen and (max-width: 415px) {
+    
+    .bookstore-txt{
+        display: none;
+    }
+  }

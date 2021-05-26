@@ -1,0 +1,37 @@
+<div>
+    <header class="header header-1" fxLayout="row" fxLayoutAlign="space-evenly" fxFlex="100" fxFlex.md="100"
+        fxFlex.sm="100" fxFlex.xs="100">
+        <div class="header-content" fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100"
+            fxFlex.sm="100" fxFlex.xs="100">
+            <div class="icon">
+                <cds-icon shape="book" size="24"></cds-icon>
+            </div>
+            <div class="bookstore-txt" (click)="dashboard()">Bookstore</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100">
+            <cds-search control-width="stretch" style="color: white;">
+                <label></label>
+                <input type="text" placeholder="Search" />
+            </cds-search>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100">
+
+            <div class="content-3" fxLayout="row" fxLayoutGap="5px">
+                <div class="dropdown bottom-right open" (click)="userClick()">
+                    <div>
+                        <cds-icon shape="user" size="24"></cds-icon>
+                    </div>
+                    <div class="dropdown-menu" *ngIf="userClicked==true">
+                        <h4 class="dropdown-header">Hello,Rajas</h4>
+                        <div class="dropdown-item" (click)="logoutUser()">Logout</div>
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100"
+                    fxFlex.xs="100">
+                    <cds-icon class="icon" shape="shopping-cart" size="24"></cds-icon>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
