@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-
   login = new Login()
   data: any
   token: any
