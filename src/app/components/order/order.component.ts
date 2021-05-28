@@ -25,4 +25,8 @@ export class OrderComponent implements OnInit {
   dashboard() {
     this.router.navigate(['userdashboard'])
   }
+
+  wishlist() {
+    this.router.navigate(['wishlist'])
+  }
 }

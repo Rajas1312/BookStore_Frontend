@@ -4,7 +4,14 @@
 }
 
 .main-box{
-    margin-top: 9vw;
+    margin-top: 7vw;
+    flex: 1 0 auto;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  
 }
 .my-cart{
     text-align: left;
@@ -147,19 +154,28 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 769px) {
+
+@media screen and (max-width: 1025px) {
+    // .boxes{
+    //     margin-left: 0%;
+    //     margin-top: 10%;
+    // }
+    .main-box{
+        margin-top: 100px;
+    }
     .cart-box {
-        border: 1px solid #707070;
+        border: 1px solid #e0dddd;
         width:85vw;
         padding: 2vw;
     }
-    // .cart-box {
-    //     border: 0.1px thin #ffffff;
-    //     width:85vw;
-    //     padding: 2vw;
-    //     margin-left: 20px;
-    //     border-radius: 1px;
-    // }
+   
+    .cart-box {
+        border: 1px solid #e0dddd;
+        width:85vw;
+        padding: 2vw;
+        margin-left: 20px;
+        border-radius: 1px;
+    }
 
 //    #book{
 //         height: 70px;
@@ -170,7 +186,7 @@
         
     }
     .bookstore-txt{
-        display: none;
+        display: contents;
     }
     .order-button{
         margin:20px;
@@ -197,15 +213,80 @@
         margin-top: 10px;
         margin-right: 60px;
     }
-   
+    .boxes{
+        margin-left: 37px;
+    }
   }
-  
-  @media screen and (max-width: 400px) {
+
+@media screen and (max-width: 769px) {
     .main-box{
         margin-top: 90px;
     }
     .cart-box {
-        border: 1px solid #707070;
+        border: 1px solid #e0dddd;
+        width:85vw;
+        padding: 2vw;
+    }
+   
+    .cart-box {
+        border: 1px solid #e0dddd;
+        width:85vw;
+        padding: 2vw;
+        margin-left: 20px;
+        border-radius: 1px;
+    }
+
+//    #book{
+//         height: 70px;
+//         width:70px;
+//     }
+    .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+        font: normal normal normal 12px/15px Lato;
+        
+    }
+    .bookstore-txt{
+        display: contents;
+    }
+    .order-button{
+        margin:20px;
+    }
+    .my-cart{
+        padding: 5px 0px 5px 25px;
+    }
+    .main-customer{
+        padding: 5px 5px 5px 25px;
+    }
+    .form-box{
+        width: 90%;
+    }
+    .order-button1{
+        margin:20px 20px 20px 0px;
+    }
+    .form-box1{
+        width: 90%;
+    }
+    .cart-box{
+        margin-top:20px ;
+    }
+    .order-books{
+        margin-top: 10px;
+        margin-right: 60px;
+    }
+    .boxes{
+        margin-left: 37px;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    
+    .boxes{
+        margin-left: 0%;
+    }
+    .main-box{
+        margin-top: 90px;
+    }
+    .cart-box {
+        border: 1px solid #e0dddd;
         width:85vw;
         padding: 2vw;
     }
@@ -230,7 +311,13 @@
   }
 
   @media screen and (max-width: 361px) {
-
+   
+    .s-box{
+        margin-left: -20px;
+    }
+    .boxes{
+        margin-left: 0%;
+    }
     .main-box{
         margin-top: 90px;
     }
@@ -249,7 +336,7 @@
     padding-bottom: 15px;
 }
 .quantity-box{
-    border:1px solid #c2c0c0;
+    border: 1px solid #e0dddd;
     padding: -0vw 1.2vw -0vw 1.2vw;
 }
     .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
@@ -266,12 +353,19 @@
   }
 
   @media screen and (max-width: 415px) {
+    .s-box{
+        margin-left: -25px;
+    }
+    .boxes{
+        margin-left: 0%;
+    }
 
     .main-box{
         margin-top: 90px;
+    
     }
     .cart-box {
-        border: 0.1px thin #ffffff;
+        border: 1px solid #e0dddd;
         width:85vw;
         padding: 2vw;
         margin-left: 20px;

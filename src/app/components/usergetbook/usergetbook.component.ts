@@ -21,6 +21,8 @@ export class UsergetbookComponent implements OnInit, OnChanges {
 
   public data: any
   arr: any
+  arr1 = [{}]
+  searchTerm = "Sherlock"
   id: any
   isBag = false
   isWishlist = false
@@ -84,7 +86,8 @@ export class UsergetbookComponent implements OnInit, OnChanges {
       this.data = res
       this.arr = this.data.result;
       this.arr = this.arr.sort(function (a: any, b: any) { return b.price - a.price })
-      console.log(this.arr)
+      this.arr1.push(this.arr)
+      this.arr1.shift()
     })
   }
 
@@ -95,5 +98,8 @@ export class UsergetbookComponent implements OnInit, OnChanges {
       this.arr = this.arr.sort(function (a: any, b: any) { return a.price - b.price })
       console.log(this.arr)
     })
+  }
+  disp() {
+    console.log(this.arr1)
   }
 }

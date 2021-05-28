@@ -3,21 +3,28 @@
   font: normal normal normal 12px/15px Lato;
   margin-right: 0%;
   background-color: #8F2B2F !important;
+  width: 100%;
+}
+.order-button1{
+  width: 100%;
+}
+.has-err{
+  color: rgb(255, 0, 0);  
 }
 
 .form-box{
-  border: 1px solid #e0dddd;
+
   padding: 0.5vw;
   width: 100%;
   border-radius: 2px;
-  border-color: #8F2B2F
+  border-color: black
 }
 .form-box1{
   border: 1px solid #e0dddd;
   padding: 0.5vw;
   width: 100%;
   border-radius: 2px;
-  border-color: #8F2B2F
+  border-color: black
 }
 .address-label{
   text-align: left;

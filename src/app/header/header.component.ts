@@ -24,4 +24,11 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['userdashboard'])
   }
 
+  wishlist() {
+    this.router.navigate(['wishlist'])
+  }
+  cartClick() {
+    this.router.navigate(['cart'])
+  }
+
 }

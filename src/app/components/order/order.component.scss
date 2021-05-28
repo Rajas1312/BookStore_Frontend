@@ -1,6 +1,12 @@
 .main-box{
     margin-top: 8vw;
 }
+.main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  
+}
 .my-cart{
 
     font: normal normal medium 18px/22px Lato;
@@ -90,6 +96,7 @@
 }
 
 .outer-table-box{
+    flex: 1 0 auto;
     .table{
         margin: 0px 0px 0px 25%;
     }

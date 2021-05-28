@@ -129,4 +129,8 @@ export class AddtocartComponent implements OnInit {
     this.router.navigate(['userdashboard'])
   }
 
+  wishlist() {
+    this.router.navigate(['wishlist'])
+  }
+
 }

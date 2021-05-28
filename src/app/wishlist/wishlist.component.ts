@@ -12,6 +12,7 @@ export class WishlistComponent implements OnInit {
   userClicked = false
   data: any
   arr: any
+  arr1 = [{}]
   length: any
   constructor(private router: Router, private service: BookserviceService) { }
 
@@ -23,7 +24,7 @@ export class WishlistComponent implements OnInit {
     this.service.getWishlist().subscribe(res => {
       console.log(res)
       this.data = res
-      this.arr = this.data.result
+      this.arr = this.data.result.reverse()
       this.length = this.data.result.length
     }, err => {
       console.log(err)

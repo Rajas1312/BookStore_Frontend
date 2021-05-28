@@ -21,16 +21,26 @@ export class DashboardComponent implements OnInit {
   bookName: any
   data: any
   arr: any
-  filteredArr: any
+  filteredArr = []
+  arr3 = []
+  private _searchTerm: string
+  // get searchTerm(): string {
+  //   return this._searchTerm
+  // }
+  // set searchTerm(value: string) {
+  //   this._searchTerm = value
+  //   this.filteredArr = this.filterFunc(value)
+  // }
 
-  private _search: string = ''
-  get searchTerm(): string {
-    return this._search
-  }
-  set searchTerm(value: string) {
-    this._search = value
-    this.filteredArr = this.filterEmployee(value)
-  }
+  // filterFunc(searchString: string) {
+  //   return this.arr3.filter(emp => {
+  //     console.log(emp[1].bookName)
+  //     // for (let i = 2; i < this.arr3.length; i++) {
+  //     //   // emp[i].bookName.toLowerCase().indexOf(searchString.toLowerCase()) !== -1
+  //     //   console.log(emp[i].bookName)
+  //     // }
+  //   })
+  // }
   constructor(private router: Router, private service: BookserviceService) { }
 
 
@@ -41,7 +51,9 @@ export class DashboardComponent implements OnInit {
     this.cartItem = $event
   }
   ngOnInit(): void {
+    this.submit()
   }
+
 
   cartClick() {
     this.router.navigate(['cart'])
@@ -74,23 +86,16 @@ export class DashboardComponent implements OnInit {
     console.log(this.lowestClickArray)
   }
 
-  // submit() {
-  //   this.service.getBooks().subscribe(res => {
-  //     this.data = res
-  //     this.arr = this.data.result
-
-  //   })
-  // }
-  filterEmployee(value) {
-    return this.service.getBooks().subscribe(res => {
+  submit() {
+    this.service.getBooks().subscribe(res => {
       this.data = res
       this.arr = this.data.result
-      return this.arr.filter(emp => {
-        // emp.bookName.toLowerCase().indexOf(value.toLowerCase()) !== -1
-        console.log(emp.bookName)
-      })
+      this.arr3.push(this.arr)
+      // console.log(this.arr3)
     })
   }
+
+
 
 }
 

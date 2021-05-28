@@ -1,10 +1,10 @@
-<div>
+<!-- <div>
     <header class="header header-1" fxLayout="row" fxLayoutAlign="space-evenly" fxFlex="100" fxFlex.md="100"
         fxFlex.sm="100" fxFlex.xs="100">
         <div class="header-content" fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100"
             fxFlex.sm="100" fxFlex.xs="100">
             <div class="icon">
-                <cds-icon shape="book" size="24"></cds-icon>
+                <cds-icon shape="book" size="24" (click)="dashboard()"></cds-icon>
             </div>
             <div class="bookstore-txt" (click)="dashboard()">Bookstore</div>
         </div>
@@ -24,6 +24,7 @@
                     </div>
                     <div class="dropdown-menu" *ngIf="userClicked==true">
                         <h4 class="dropdown-header">Hello,Rajas</h4>
+                        <div class="dropdown-item " (click)="wishlist()">Wishlist</div>
                         <div class="dropdown-item" (click)="logoutUser()">Logout</div>
                     </div>
                 </div>
@@ -34,10 +35,12 @@
             </div>
         </div>
     </header>
-</div>
+</div> -->
+
+<app-header></app-header>
 
 <div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 8vw;" fxLayoutAlign.xs="center center">
-    <img src="../../../assets/order.png" id="confetti">
+    <img src="../../../assets/order.png" id="confetti" style="margin-top: 18vh;">
 </div>
 
 <!-- <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.xs="center center">
@@ -59,25 +62,30 @@
         </tbody>
     </table>
 </div> -->
-<div class="outer-table-box">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Emailus</th>
-                <th>Contactus</th>
-                <th>Address</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>admin@bookstore@gmail.com</td>
-                <td>+918163798356</td>
-                <td>42, 14th Main, 15th Cross, Sector 4 ,opp to BDA complex, near Kumarakom restaurant, HSR Layout,
-                    Bangalore 560034</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="main">
+    <div class="outer-table-box">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Emailus</th>
+                    <th>Contactus</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>admin@bookstore@gmail.com</td>
+                    <td>+918163798356</td>
+                    <td>42, 14th Main, 15th Cross, Sector 4 ,opp to BDA complex, near Kumarakom restaurant, HSR Layout,
+                        Bangalore 560034</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <app-footer></app-footer>
+    </div>
+
 </div>
-
-<app-footer></app-footer>

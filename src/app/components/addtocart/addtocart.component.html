@@ -1,234 +1,203 @@
-<div>
-    <header class="header header-1" fxLayout="row" fxLayoutAlign="space-evenly" fxFlex="100" fxFlex.md="100"
-        fxFlex.sm="100" fxFlex.xs="100">
-        <div class="header-content" fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100"
-            fxFlex.sm="100" fxFlex.xs="100">
-            <div class="icon">
-                <cds-icon shape="book" size="24"></cds-icon>
-            </div>
-            <div class="bookstore-txt" (click)="dashboard()">Bookstore</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100">
-            <cds-search control-width="stretch" style="color: white;">
-                <label></label>
-                <input type="text" placeholder="Search" />
-            </cds-search>
-        </div>
+<app-header></app-header>
 
-        <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="100">
-
-            <div class="content-3" fxLayout="row" fxLayoutGap="5px">
-                <div class="dropdown bottom-right open" (click)="userClick()">
-                    <div>
-                        <cds-icon shape="user" size="24"></cds-icon>
-                    </div>
-                    <div class="dropdown-menu" *ngIf="userClicked==true">
-                        <h4 class="dropdown-header">Hello,Rajas</h4>
-                        <div class="dropdown-item " (click)="logoutUser()">Logout</div>
-                    </div>
+<div class="main">
+    <div class="main-box" fxLayout="row" fxLayoutAlign="space-around">
+        <div class="boxes" fxLayout="column" fxLayoutAlign="flex-start center" fxLayoutGap="2vw">
+            <div class="cart-box">
+                <div fxLayout="row" fxLayoutAlign="space-between" class="my-cart">
+                    <div>My cart({{length}})</div>
+                    <div></div>
                 </div>
-                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" fxFlex.md="100" fxFlex.sm="100"
-                    fxFlex.xs="100">
-                    <cds-icon shape="shopping-cart" size="24"></cds-icon>
-                </div>
-            </div>
-        </div>
-    </header>
-</div>
-
-
-<div class="main-box" fxLayout="row" fxLayoutAlign="space-around">
-    <div class="boxes" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2vw">
-        <div class="cart-box">
-            <div fxLayout="row" fxLayoutAlign="space-between" class="my-cart">
-                <div>My cart({{length}})</div>
-                <div></div>
-            </div>
-            <div class="loop-cart" fxLayout="row" fxLayoutAlign="space-between" fxLayout.xs="column"
-                *ngFor="let array of arr;index as i" style="margin-bottom:1vw;">
-                <div class="book-info" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap=30px
-                    fxLayoutAlign.xs="space-evenly">
-                    <div><img id="book" src="../../assets/Image 11.png"></div>
-                    <div fxLayout="column" fxLayoutAlign="space-between">
-                        <div class="book-name">{{array.product_id.bookName}}</div>
-                        <div class="author">by {{array.product_id.author}}</div>
-                        <div class="price">Rs. {{array.product_id.price}}</div>
-                        <div fxLayout="row">
-                            <div>
-                                <cds-icon size="20" shape="minus-circle" (click)="decrementQuantity()">
-                                </cds-icon>
+                <div class="loop-cart" fxLayout="row" fxLayoutAlign="space-between" fxLayout.xs="column"
+                    *ngFor="let array of arr;index as i" style="margin-bottom:1vw;">
+                    <div class="book-info" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap=30px
+                        fxLayoutAlign.xs="space-evenly">
+                        <div><img id="book" src="../../assets/Image 11.png"></div>
+                        <div fxLayout="column" fxLayoutAlign="space-between">
+                            <div class="book-name">{{array.product_id.bookName}}</div>
+                            <div class="author">by {{array.product_id.author}}</div>
+                            <div class="price">Rs. {{array.product_id.price}}</div>
+                            <div fxLayout="row">
+                                <div>
+                                    <cds-icon size="20" shape="minus-circle" (click)="decrementQuantity()">
+                                    </cds-icon>
+                                </div>
+                                <div class="quantity-box">{{array.product_id.quantity*1 + quantity}}</div>
+                                <div>
+                                    <cds-icon size="20" shape="plus-circle" (click)=" incrementQuantity() ">
+                                    </cds-icon>
+                                </div>
+                                <div style="cursor: pointer;" class="remove" fxLayout="row"
+                                    (click)="deleteFromCart(array._id)">Remove</div>
                             </div>
-                            <div class="quantity-box">{{array.product_id.quantity*1 + quantity}}</div>
-                            <div>
-                                <cds-icon size="20" shape="plus-circle" (click)=" incrementQuantity() ">
-                                </cds-icon>
-                            </div>
-                            <div style="cursor: pointer;" class="remove" fxLayout="row"
-                                (click)="deleteFromCart(array._id)">Remove</div>
                         </div>
                     </div>
-                </div>
-                <div class="order-button" fxLayout="column" fxLayoutAlign="flex-end"
-                    *ngIf="i==arr.length-1 && openedBox!=1">
-                    <button type="button" class="btn btn-primary" (click)="openBox(1)">place order</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="cart-box my-cart" *ngIf="openedBox!=1">
-            Customer Details
-        </div>
-
-        <div class="cart-box" *ngIf="openedBox==1">
-            <div class="my-cart">Customer Details</div>
-            <div class="main-customer" fxLayout="row" fxLayoutAlign="space-between" fxLayout.xs="column">
-
-                <form [formGroup]="customerForm">
-                    <div fxLayout="column" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw" fxLayoutGap.xs="2vw">
-                        <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw" fxFlex.md="100"
-                            fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100" fxLayoutAlign="flex-start"
-                            fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayout.xs="column" fxLayout.sm="column"
-                            fxLayoutAlign.xs="flex-start" fxLayoutGap.xs="2vw">
-                            <div fxLayout="column">
-                                <label class="address-label">Name</label>
-                                <input id="name" class="form-box" placeholder="Name" formControlName="name">
-                                <clr-control-error class="error"
-                                    *ngIf="customerForm.controls.name.errors &&customerForm.controls.name.touched">This
-                                    field is
-                                    required!
-                                </clr-control-error>
-                            </div>
-                            <div fxLayout="column">
-                                <label class="address-label">Phone Number</label>
-                                <input class="form-box" placeholder="Phone Number" formControlName="phoneNumber"
-                                    type="text">
-                                <clr-control-error class="error"
-                                    *ngIf="customerForm.controls.phoneNumber.errors &&customerForm.controls.phoneNumber.touched">
-                                    This
-                                    field is
-                                    required!
-                                </clr-control-error>
-                            </div>
-                        </div>
-                        <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="-1vw" fxFlex.md="100"
-                            fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100" fxLayoutAlign="flex-start"
-                            fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayout.xs="column" fxLayout.sm="column"
-                            fxLayoutAlign="flex-start" fxLayoutGap.xs="2vw">
-                            <div fxLayout="column">
-                                <label class="address-label">Pincode</label>
-                                <input class="form-box" placeholder="Pincode" formControlName="pincode">
-                                <clr-control-error class="error"
-                                    *ngIf="customerForm.controls.pincode.errors &&customerForm.controls.pincode.touched">
-                                    This
-                                    field is
-                                    required!
-                                </clr-control-error>
-                            </div>
-                            <div fxLayout="column">
-                                <label class="address-label">Locality</label>
-                                <input class="form-box" placeholder="Locality" formControlName="locality">
-                                <clr-control-error class="error"
-                                    *ngIf="customerForm.controls.locality.errors &&customerForm.controls.locality.touched">
-                                    This
-                                    field is
-                                    required!
-                                </clr-control-error>
-                            </div>
-                        </div>
-                        <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="-1vw" fxFlex.md="100"
-                            fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100" fxLayoutAlign="flex-start"
-                            fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayout.xs="column" fxLayout.sm="column"
-                            fxLayoutAlign="flex-start" fxLayoutGap.xs="2vw">
-                            <div fxLayout="column">
-                                <label class="address-label">Address</label>
-                                <input class="form-box1" placeholder="Address" formControlName="address">
-                                <clr-control-error class="error"
-                                    *ngIf="customerForm.controls.address.errors &&customerForm.controls.address.touched">
-                                    This
-                                    field is
-                                    required!
-                                </clr-control-error>
-                            </div>
-                        </div>
-                        <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="-1vw" fxFlex.md="100"
-                            fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100" fxLayoutAlign="flex-start"
-                            fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayout.xs="column" fxLayout.sm="column"
-                            fxLayoutAlign="flex-start" fxLayoutGap.xs="2vw">
-                            <div fxLayout="column">
-                                <label class="address-label">City</label>
-                                <input class="form-box" placeholder="City" formControlName="city">
-                                <clr-control-error class="error"
-                                    *ngIf="customerForm.controls.city.errors &&customerForm.controls.city.touched">
-                                    This
-                                    field is
-                                    required!
-                                </clr-control-error>
-                            </div>
-                            <div fxLayout="column">
-                                <label class="address-label">Town</label>
-                                <input class="form-box" placeholder="Town" formControlName="town">
-                                <clr-control-error class="error"
-                                    *ngIf="customerForm.get('town')?.errors &&customerForm.controls.town.touched">
-                                    This
-                                    field is
-                                    required!
-                                </clr-control-error>
-                                <span class="error" *ngIf="clickerror==1">Invalid</span>
-                            </div>
-                        </div>
-                        <div fxLayout="column" fxLayoutAlign="flex-start">
-                            <clr-radio-container clrInline>
-                                <label>Type</label>
-                                <clr-radio-wrapper>
-                                    <input type="radio" clrRadio name="addressType" required value="Home"
-                                        formControlName="addressType" />
-                                    <label>Home</label>
-                                </clr-radio-wrapper>
-                                <clr-radio-wrapper>
-                                    <input type="radio" clrRadio name="addressType" required value="Office"
-                                        formControlName="addressType" />
-                                    <label>Office</label>
-                                </clr-radio-wrapper>
-                                <clr-radio-wrapper>
-                                    <input type="radio" clrRadio name="addressType" required value="Other"
-                                        formControlName="addressType" />
-                                    <label>Other</label>
-                                </clr-radio-wrapper>
-                                <clr-control-error>This field is required!</clr-control-error>
-                            </clr-radio-container>
-                        </div>
-                    </div>
-                </form>
-                <div class="order-button1" fxLayout="column" fxLayoutAlign="flex-end">
-                    <button type="button" class="btn btn-primary" (click)="openBox2(1)"
-                        *ngIf="openedBox2!=1">Continue</button>
-                </div>
-            </div>
-        </div>
-        <div class="cart-box my-cart" *ngIf="openedBox2!=1">
-            Order Details
-        </div>
-        <div class="cart-box my-cart" *ngIf="openedBox2==1">
-            <div class="order-summery">Order Sumarrey</div>
-            <div fxLayout="row" fxLayoutAlign="space-between" fxLayout.xs="column" *ngFor="let array of arr;index as i"
-                style="margin-bottom:1vw;">
-                <div class="order-books" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap=10px
-                    fxLayoutAlign.xs="space-evenly" fxLayoutGap="30px">
-                    <div><img id="book" src="../../assets/Image 11.png"></div>
-                    <div fxLayout="column" fxLayoutAlign="space-evenly">
-                        <div class="book-name">{{array.product_id.bookName}}</div>
-                        <div class="author">by {{array.product_id.author}}</div>
-                        <div class="price">Rs. {{array.product_id.price}}</div>
-
+                    <div class="order-button" fxLayout="column" fxLayoutAlign="flex-end"
+                        *ngIf="i==arr.length-1 && openedBox!=1">
+                        <button type="button" class="btn btn-primary" (click)="openBox(1)">place order</button>
                     </div>
                 </div>
-                <div class="order-button1" fxLayout="column" fxLayoutAlign="flex-end" *ngIf="i==arr.length-1">
-                    <button type="button" class="btn btn-primary" (click)="placeOrder()">place
-                        order</button>
+            </div>
+
+            <div class="cart-box my-cart" *ngIf="openedBox!=1">
+                Customer Details
+            </div>
+
+            <div class="cart-box" *ngIf="openedBox==1">
+                <div class="my-cart">Customer Details</div>
+                <div class="main-customer" fxLayout="row" fxLayoutAlign="space-between" fxLayout.xs="column">
+
+                    <form [formGroup]="customerForm">
+                        <div fxLayout="column" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw" fxLayoutGap.xs="2vw">
+                            <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="0.5vw" fxFlex.md="100"
+                                fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100"
+                                fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayout.xs="column"
+                                fxLayout.sm="column" fxLayoutAlign.xs="flex-start" fxLayoutGap.xs="2vw">
+                                <div fxLayout="column">
+                                    <label class="address-label">Name</label>
+                                    <input id="name" class="form-box" placeholder="Name" formControlName="name">
+                                    <clr-control-error class="error"
+                                        *ngIf="customerForm.controls.name.errors &&customerForm.controls.name.touched">
+                                        This
+                                        field is
+                                        required!
+                                    </clr-control-error>
+                                </div>
+                                <div fxLayout="column">
+                                    <label class="address-label">Phone Number</label>
+                                    <input class="form-box" placeholder="Phone Number" formControlName="phoneNumber"
+                                        type="text">
+                                    <clr-control-error class="error"
+                                        *ngIf="customerForm.controls.phoneNumber.errors &&customerForm.controls.phoneNumber.touched">
+                                        This
+                                        field is
+                                        required!
+                                    </clr-control-error>
+                                </div>
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="-1vw" fxFlex.md="100"
+                                fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100"
+                                fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayout.xs="column"
+                                fxLayout.sm="column" fxLayoutAlign="flex-start" fxLayoutGap.xs="2vw">
+                                <div fxLayout="column">
+                                    <label class="address-label">Pincode</label>
+                                    <input class="form-box" placeholder="Pincode" formControlName="pincode">
+                                    <clr-control-error class="error"
+                                        *ngIf="customerForm.controls.pincode.errors &&customerForm.controls.pincode.touched">
+                                        This
+                                        field is
+                                        required!
+                                    </clr-control-error>
+                                </div>
+                                <div fxLayout="column">
+                                    <label class="address-label">Locality</label>
+                                    <input class="form-box" placeholder="Locality" formControlName="locality">
+                                    <clr-control-error class="error"
+                                        *ngIf="customerForm.controls.locality.errors &&customerForm.controls.locality.touched">
+                                        This
+                                        field is
+                                        required!
+                                    </clr-control-error>
+                                </div>
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="-1vw" fxFlex.md="100"
+                                fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100"
+                                fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayout.xs="column"
+                                fxLayout.sm="column" fxLayoutAlign="flex-start" fxLayoutGap.xs="2vw">
+                                <div fxLayout="column">
+                                    <label class="address-label">Address</label>
+                                    <input class="form-box1" placeholder="Address" formControlName="address">
+                                    <clr-control-error class="error"
+                                        *ngIf="customerForm.controls.address.errors &&customerForm.controls.address.touched">
+                                        This
+                                        field is
+                                        required!
+                                    </clr-control-error>
+                                </div>
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="-1vw" fxFlex.md="100"
+                                fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.sm="100"
+                                fxLayoutAlign="flex-start" fxLayoutGap="0.5vw" fxFlex.xs="100" fxLayout.xs="column"
+                                fxLayout.sm="column" fxLayoutAlign="flex-start" fxLayoutGap.xs="2vw">
+                                <div fxLayout="column">
+                                    <label class="address-label">City</label>
+                                    <input class="form-box" placeholder="City" formControlName="city">
+                                    <clr-control-error class="error"
+                                        *ngIf="customerForm.controls.city.errors &&customerForm.controls.city.touched">
+                                        This
+                                        field is
+                                        required!
+                                    </clr-control-error>
+                                </div>
+                                <div fxLayout="column">
+                                    <label class="address-label">Town</label>
+                                    <input class="form-box" placeholder="Town" formControlName="town">
+                                    <clr-control-error class="error"
+                                        *ngIf="customerForm.get('town')?.errors &&customerForm.controls.town.touched">
+                                        This
+                                        field is
+                                        required!
+                                    </clr-control-error>
+                                    <span class="error" *ngIf="clickerror==1">Invalid</span>
+                                </div>
+                            </div>
+                            <div fxLayout="column" fxLayoutAlign="flex-start">
+                                <clr-radio-container clrInline>
+                                    <label>Type</label>
+                                    <clr-radio-wrapper>
+                                        <input type="radio" clrRadio name="addressType" required value="Home"
+                                            formControlName="addressType" />
+                                        <label>Home</label>
+                                    </clr-radio-wrapper>
+                                    <clr-radio-wrapper>
+                                        <input type="radio" clrRadio name="addressType" required value="Office"
+                                            formControlName="addressType" />
+                                        <label>Office</label>
+                                    </clr-radio-wrapper>
+                                    <clr-radio-wrapper>
+                                        <input type="radio" clrRadio name="addressType" required value="Other"
+                                            formControlName="addressType" />
+                                        <label>Other</label>
+                                    </clr-radio-wrapper>
+                                    <clr-control-error>This field is required!</clr-control-error>
+                                </clr-radio-container>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="order-button1" fxLayout="column" fxLayoutAlign="flex-end">
+                        <button type="button" class="btn btn-primary" (click)="openBox2(1)"
+                            *ngIf="openedBox2!=1">Continue</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-box my-cart" *ngIf="openedBox2!=1">
+                Order Details
+            </div>
+            <div class="cart-box my-cart" *ngIf="openedBox2==1">
+                <div class="order-summery">Order Sumarrey</div>
+                <div fxLayout="row" fxLayoutAlign="space-between" fxLayout.xs="column"
+                    *ngFor="let array of arr;index as i" style="margin-bottom:1vw;">
+                    <div class="order-books" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap=10px
+                        fxLayoutAlign.xs="space-evenly" fxLayoutGap="30px">
+                        <div><img id="book" src="../../assets/Image 11.png"></div>
+                        <div fxLayout="column" fxLayoutAlign="space-evenly">
+                            <div class="book-name">{{array.product_id.bookName}}</div>
+                            <div class="author">by {{array.product_id.author}}</div>
+                            <div class="price">Rs. {{array.product_id.price}}</div>
+
+                        </div>
+                    </div>
+                    <div class="order-button1" fxLayout="column" fxLayoutAlign="flex-end" *ngIf="i==arr.length-1">
+                        <button type="button" class="btn btn-primary" (click)="placeOrder()">place
+                            order</button>
+                    </div>
                 </div>
             </div>
         </div>
+        <div></div>
     </div>
-    <div></div>
+    <div>
+        <app-footer></app-footer>
+    </div>
+
 </div>
-<app-footer></app-footer>

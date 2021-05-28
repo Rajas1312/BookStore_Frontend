@@ -1,7 +1,7 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Login } from './login.model';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RegisterService } from '../../service/user.service';
 import { Router } from '@angular/router';
 
@@ -12,22 +12,28 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  form = new FormGroup({
-    username: new FormControl('', Validators.required)
-  })
+  loginForm: FormGroup;
 
   login = new Login()
   data: any
   token: any
   constructor(private dataservice: RegisterService,
     private router: Router,
-    private _snackBar: MatSnackBar) { }
+    private _snackBar: MatSnackBar, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.formValidation()
+  }
+
+  formValidation() {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    })
   }
 
   submit() {
-    this.dataservice.loginUser(this.login).subscribe(res => {
+    this.dataservice.loginUser(this.loginForm.value).subscribe(res => {
       this.data = res
       console.log(this.data.result.accessToken)
       this.token = this.data.result.accessToken
