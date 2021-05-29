@@ -2,10 +2,12 @@
     margin-top: 60px;
     // margin-left: 190px;
     background-color: white;
+    
 }
 .wish-title{
     margin-top: 2vw;
 }
+
 .home{
     text-align: left;
 font: normal normal bold 12px/16px Roboto;
@@ -23,7 +25,10 @@ opacity: 1;
 
 .book-container{
     width:71%;
-    border: 1px solid #DCDCDC
+    border: 1px solid #DCDCDC;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 .wishlist-txt{
     background: #F5F5F5 0% 0% no-repeat padding-box;
